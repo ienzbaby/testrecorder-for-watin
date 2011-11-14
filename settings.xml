@@ -1,0 +1,21 @@
+<settings>
+  <BaseIEName>ie</BaseIEName>
+  <PopupIEName>iepopup</PopupIEName>
+  <TypingTime>1000</TypingTime>
+  <FindPattern>Id,Name,Href,Url,Src,Value,Style,Text,Id,Name,Href,Url,Src,Value,Style,Text</FindPattern>
+  <WarnWhenUnsaved>1</WarnWhenUnsaved>
+  <SetMaxSize>1</SetMaxSize>
+  <GlobalWaitTime>100</GlobalWaitTime>
+  <HideDOSWindow>0</HideDOSWindow>
+  <CompilePath>D:\程序备份\ZQ_WaitN\Record\bin\Debug</CompilePath>
+  <DOMHighlightColor>Yellow</DOMHighlightColor>
+  <CodeLanguage>CSharp</CodeLanguage>
+  <ScriptFormatting>Snippet</ScriptFormatting>
+  <RunCount>2</RunCount>
+  <DefaultSaveTemplate>
+  </DefaultSaveTemplate>
+  <DefaultRunTemplate>
+  </DefaultRunTemplate>
+  <DefaultCompileTemplate>
+  </DefaultCompileTemplate>
+</settings>
