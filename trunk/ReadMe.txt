@@ -2,6 +2,8 @@
 Application to record tests for the WatiN (web application testing for .Net) library. Tests can be saved and compiled into an executable or assembly.
 用来记录 WatiN 测试的应用，测试结果可用保存和编制成为集合。
 -------------------------------------------------------------------
+demo.swf:视频教程 demo.jpg:界面简介
+-------------------------------------------------------------------
 1、  生成兼容WaitN的UI测试脚本；
 2、  支持生成多种语言的脚本；
 3、  用户可定义生成模板；
