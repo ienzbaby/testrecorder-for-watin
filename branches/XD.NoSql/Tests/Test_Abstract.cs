@@ -5,7 +5,7 @@ using log4net;
 using NUnit.Framework;
 using XD.Tools;
 
-namespace XD.Client.Tests
+namespace XD.QQ.Tests
 {
     /// <summary>
     /// 抽象测试类
