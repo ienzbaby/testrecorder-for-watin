@@ -1,16 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Text.RegularExpressions;
-using Newtonsoft.Json;
-using NUnit.Framework;
-using XD.Client.Tests;
 using System.Threading;
+using NUnit.Framework;
 using XD.Tools.Tasks;
-using System.Text;
-using System.Data;
-using XD.Tools.DBUtility;
-using System.Configuration;
 
 namespace XD.QQ.Tests
 {

@@ -20,7 +20,7 @@ namespace XD.QQ.Tests
             MockHttpContext mock = new MockHttpContext(false);
             System.Web.HttpContext.Current = mock.Context;
 
-            log4net.Config.XmlConfigurator.ConfigureAndWatch(new FileInfo("XD.Tools.Tests.dll.config"));
+            log4net.Config.XmlConfigurator.ConfigureAndWatch(new FileInfo("XD.NoSql.dll.config"));
             log = LogManager.GetLogger(this.GetType());
 
             sw.Start();
