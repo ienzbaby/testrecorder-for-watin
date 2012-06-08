@@ -30,6 +30,13 @@ namespace XD.QQ
                     root.Add("items", JsonServices.DeserializeArray(list));
                     context.Response.Write(JavaScriptConvert.SerializeObject(root));
                 }
+                else if (act == "rows")
+                {
+                    JavaScriptObject root = new JavaScriptObject();
+                    root.Add("errno", "0");
+                    root.Add("item", manager.Count());
+                    context.Response.Write(JavaScriptConvert.SerializeObject(root));
+                }
                 else if (act == "exist")
                 {
                     string uins = GetSecurityParam(context, "uins", "");
