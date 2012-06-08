@@ -10,6 +10,7 @@ using XD.Tools.Tasks;
 using System.Text;
 using System.Data;
 using XD.Tools.DBUtility;
+using System.Configuration;
 
 namespace XD.QQ.Tests
 {
@@ -22,7 +23,7 @@ namespace XD.QQ.Tests
         {
             string path = @"E:\nodejs\Data";
             ImportTask task = new ImportTask();
-            task.SearchPath = path;
+            //task.SearchPath = path;
             task.Execute(null);
             Console.WriteLine("完成目录[{0}]的数据导入！", path);
         }
@@ -36,12 +37,6 @@ namespace XD.QQ.Tests
                 Thread.Sleep(1000);
                 GC.Collect();
             }
-        }
-        [Test]
-        public void GetPartionFunction()
-        {
-            DataTable dt = DataFactory.ExecuteSql("select * from QQ_Actor limit 1,100").Tables[0];
-            Console.WriteLine(dt.Rows.Count);
         }
         [Test]
         public void GetUnUsed()
