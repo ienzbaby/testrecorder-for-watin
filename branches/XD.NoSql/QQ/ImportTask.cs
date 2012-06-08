@@ -66,14 +66,14 @@ namespace XD.QQ
                 try
                 {
                     this.ReadActorFromFile(dicMain, path);
+                    if (dicMain.Count > 0) this.SqlBulkImport(dicMain);
+
                     File.Delete(path);
                 }
                 catch (Exception err)
                 {
                     log.ErrorFormat("File Read Error{0}:{1}", err.Message, err.StackTrace);
                 }
-
-                if (dicMain.Count > 0) this.SqlBulkImport(dicMain);
             }
         }
         private DataTable CreateDataTable(IDictionary<long, Actor> dicMain){
