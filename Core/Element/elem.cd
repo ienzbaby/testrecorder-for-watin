@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TestRecorder.Core.Actions.ActionCheckbox">
+    <Position X="4" Y="6.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABAAEAAAAACgAgCAAAAAAAQAAAAAAAAQAAQAAAAAAQA=</HashCode>
+      <FileName>Core\Element\ActionCheckbox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.Actions.ActionElementBase">
+    <Position X="13.5" Y="4.75" Width="3.5" />
+    <Members>
+      <Method Name="GetDocumentPath" Hidden="true" />
+      <Method Name="GetElemDesc" Hidden="true" />
+      <Method Name="GetFileElement" Hidden="true" />
+      <Method Name="IsMethodUsed" Hidden="true" />
+      <Method Name="SaveSettings" Hidden="true" />
+      <Method Name="SetFrame" Hidden="true" />
+      <Method Name="SetFrameList" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>IAAQBgAgAQQAAAAgAAABgBAAAAABAAAAAAQAAAABAwA=</HashCode>
+      <FileName>Core\Element\ActionElementBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.Actions.ActionFileDialog">
+    <Position X="1.75" Y="6.75" Width="1.5" />
+    <Members>
+      <Method Name="EnterFilenameTimer_Tick" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="TestRecorder.Core.Actions.ActionFileDialog.ClickDialogThread" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Core\Element\ActionFileDialog.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ABAAEQAAAAAgQgAAAAAAAAQAAAAAAAAQAAQAAAgAAQA=</HashCode>
+      <FileName>Core\Element\ActionFileDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.Actions.ActionSelectList">
+    <Position X="6.25" Y="6.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABAAGAACAACgRgAAAAAAAAQAAAAAAAAQAAQAAAAADQA=</HashCode>
+      <FileName>Core\Element\ActionSelectList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.Actions.ActionRadio">
+    <Position X="25" Y="6.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABAAEAAAAACgAgCAAAAAAAQAAAAAAAAQAAQAAAAAAQA=</HashCode>
+      <FileName>Core\Element\ActionRadio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.Actions.ActionTestElement">
+    <Position X="10.75" Y="6.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="TestRecorder.Core.Actions.ActionTestElement.AvailableTests" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Core\Element\ActionTestElement.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ABABEAAQAAAgAgAAAAAAAAQIAAAAAAAQAQQAAAAAAQA=</HashCode>
+      <FileName>Core\Element\ActionTestElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.Actions.ActionClick">
+    <Position X="15.25" Y="6.75" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABAAEAAAAACgAgAAAAAAAAQAAAAAAAAQgAQAAAAAAQA=</HashCode>
+      <FileName>Core\Element\ActionClick.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.Actions.ActionWait">
+    <Position X="8.5" Y="6.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="TestRecorder.Core.Actions.ActionWait.WaitTypes" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Core\Element\ActionWait.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ABIAEAAAAACgAoAAAAAAAAQAAIEAAAAQAAQAAAAAASA=</HashCode>
+      <FileName>Core\Element\ActionWait.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.Actions.ActionDoubleClick">
+    <Position X="13" Y="6.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABAAEAAAAACgAgAAAAAAAAQAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Element\ActionDoubleClick.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.Actions.ActionMouse">
+    <Position X="22.75" Y="6.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="TestRecorder.Core.Actions.ActionMouse.MouseFunctions" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Core\Element\ActionMouse.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ABAAEBAAAACgAgAAAAAAAAQAAAAAAAAQAAQAAAAAAQA=</HashCode>
+      <FileName>Core\Element\ActionMouse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.Actions.ActionTypeText">
+    <Position X="27.25" Y="6.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABAgEAAAAACgAgCAAAAAAAQAAAAAAIAQAAQAAAAAAQA=</HashCode>
+      <FileName>Core\Element\ActionTypeText.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.Actions.ActionFireEvent">
+    <Position X="18.25" Y="6.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AJAAEAAAAACgAgAAAAAAAAQAAIAAAAAQgAQAAAAAAQA=</HashCode>
+      <FileName>Core\Actions\ActionFireEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.Actions.ActionKey">
+    <Position X="20.5" Y="6.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="TestRecorder.Core.Actions.ActionKey.KeyFunctions" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Core\Actions\ActionKey.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ABAAEAAAAACgAgAAAAAIAAQAAAAAAAAQAAQAAAAAAwA=</HashCode>
+      <FileName>Core\Actions\ActionKey.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="SimSun" Size="9" />
+</ClassDiagram>

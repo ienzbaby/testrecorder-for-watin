@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TestRecorder.Core.Actions.ActionBack">
+    <Position X="1" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAEAAAAAAgAgAAAAAAAAQAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Actions\ActionBack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.Actions.ActionBase">
+    <Position X="7.75" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ARAAEAAEAAjgAgAAAAAAAAQAAAAAAAAQAAQAAAAAAQI=</HashCode>
+      <FileName>Core\Actions\ActionBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.Actions.ActionCloseWindow">
+    <Position X="5.5" Y="4.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABAAEAAAAAAgAgAABAAAAAQAAAAAAAAQAAAAAAAAACA=</HashCode>
+      <FileName>Core\Actions\ActionCloseWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.Actions.ActionRefresh">
+    <Position X="10" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAEAAAAAAgAgAAAAAAAAQAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Actions\ActionRefresh.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.Actions.ActionForward">
+    <Position X="3.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAEAAAAAAgAgAAAAAAAAQAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Actions\ActionForward.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.Actions.ActionNavigate">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <Members>
+      <Method Name="GoToURL" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABAAEAAAAACgAgAAAQAAAAQAACQAAAASAAQAABAAAQA=</HashCode>
+      <FileName>Core\Actions\ActionNavigate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.Actions.ActionOpenPopup">
+    <Position X="14.5" Y="8.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAgAAAACAAAQAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Actions\ActionOpenPopup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.Actions.ActionOpenWindow">
+    <Position X="14.5" Y="4.75" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABAAEAAAAAAgAgAABAAAAAQAAAAAAAAQAAAAAAAAACA=</HashCode>
+      <FileName>Core\Actions\ActionOpenWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.BrowserWindow" Collapsed="true">
+    <Position X="17.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAIAAAAAAAAAAAAIQAAAAAAA=</HashCode>
+      <FileName>Core\BrowserWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.ScriptManager" Collapsed="true">
+    <Position X="19" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BJAAIAIigAAAhABQABIwKIFAGQIOAAYSsgBE6EAkCAI=</HashCode>
+      <FileName>Core\ScriptManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.PageList" Collapsed="true">
+    <Position X="16.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAQAAQAAAAQAAAAAA=</HashCode>
+      <FileName>Core\Actions\PageList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.WebPage" Collapsed="true">
+    <Position X="17.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAgAAAAEAAAAgAAAAASAAAAAQACAwABAEAAA=</HashCode>
+      <FileName>Core\WebPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.Actions.JavascriptHandler">
+    <Position X="12.25" Y="4.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABQAEAAAAAAgAgAAAAAAAAQAAAAAAAAQAASAAAAgAQA=</HashCode>
+      <FileName>Core\Actions\JavascriptHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
