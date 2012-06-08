@@ -14,7 +14,7 @@ using XD.Tools.DBUtility;
 namespace XD.QQ.Tests
 {
     [TestFixture]
-    public class Test_QQ:Test_Abstract
+    class Test_QQ:Test_Abstract
     {
         private ActorManager manager = ActorManager.Instance();
         [Test(Description = "从NodeJs下载的文件中导入数据")]
