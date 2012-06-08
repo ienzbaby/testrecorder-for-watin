@@ -10,7 +10,7 @@ namespace XD.Client.Tests
     /// <summary>
     /// 抽象测试类
     /// </summary>
-    public class Test_Abstract
+    class Test_Abstract
     {
         protected ILog log = null;
         protected Stopwatch sw = new Stopwatch();
