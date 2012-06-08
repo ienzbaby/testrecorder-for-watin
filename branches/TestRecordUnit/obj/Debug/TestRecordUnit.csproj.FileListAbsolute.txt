@@ -1,0 +1,11 @@
+D:\程序备份\ZQ_WaitN\TestRecordUnit\bin\Debug\TestRecordUnit.dll
+D:\程序备份\ZQ_WaitN\TestRecordUnit\bin\Debug\TestRecordUnit.pdb
+D:\程序备份\ZQ_WaitN\TestRecordUnit\bin\Debug\ILMerge.exe
+D:\程序备份\ZQ_WaitN\TestRecordUnit\bin\Debug\nunit.framework.dll
+D:\程序备份\ZQ_WaitN\TestRecordUnit\obj\Debug\ResolveAssemblyReference.cache
+D:\程序备份\ZQ_WaitN\TestRecordUnit\obj\Debug\TestRecordUnit.dll
+D:\程序备份\ZQ_WaitN\TestRecordUnit\obj\Debug\TestRecordUnit.pdb
+D:\程序备份\ZQ_WaitN\TestRecordUnit\bin\Debug\Interop.SHDocVw.dll
+D:\程序备份\ZQ_WaitN\TestRecordUnit\bin\Debug\WatiN.Core.dll
+D:\程序备份\ZQ_WaitN\TestRecordUnit\bin\Debug\WatiN.Core.pdb
+D:\程序备份\ZQ_WaitN\TestRecordUnit\bin\Debug\WatiN.Core.xml
