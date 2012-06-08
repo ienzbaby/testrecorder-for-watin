@@ -9,6 +9,8 @@ using System.Text.RegularExpressions;
 using System.Xml;
 using Newtonsoft.Json;
 using XD.Tools.Tasks;
+using System.Configuration;
+using log4net;
 
 namespace XD.QQ
 {
@@ -17,18 +19,18 @@ namespace XD.QQ
     /// </summary>
     public class ImportTask : ITask
     {
-        private ActorManager manager = ActorManager.Instance();
-        public int Total = 0;
-        public string SearchPath = @"E:\nodejs\Data";
+        public int Total = 0; //数量
 
+        private ActorManager manager = ActorManager.Instance();
+        private string SearchPath = @"E:\nodejs\Data";
         private DataTable dtTemplate;
         private long CurrentNum = 0;
-        private string ConnStr= @"max pool size=512; Server=192.168.1.104\SQL2005;initial catalog=SpaceBuilder;User Id=sa;Password=sa;";
+        private string ConnStr = ConfigurationManager.AppSettings["ConnectionString"];
         private string TableName = "QQ_Actor";
         private int PerBatchSize = 1000;
-
         private Stopwatch sw = new Stopwatch();
-
+        private ILog log = LogManager.GetLogger(typeof(ImportTask));
+        
         private IEnumerable GetFiles()
         {
             FileDirectoryEnumerable fileSearcher = new FileDirectoryEnumerable();
@@ -48,6 +50,9 @@ namespace XD.QQ
         }
         public void Execute(XmlElement xElement)
         {
+            if (xElement.Attributes["path"] != null)//=====读取路径===
+                this.SearchPath = xElement.Attributes["path"].Value;
+            
             dtTemplate = manager.GetRecordByRowNumber(0, 1, "").Tables[0];
             dtTemplate.Columns.Remove("RowId");//去除序号列
             sw.Start();
@@ -65,7 +70,7 @@ namespace XD.QQ
                 }
                 catch (Exception err)
                 {
-                    Console.WriteLine("File Read Error{0}:{1}", err.Message, err.StackTrace);
+                    log.WriteLine("File Read Error{0}:{1}", err.Message, err.StackTrace);
                 }
 
                 if (dicMain.Count > 0) this.SqlBulkImport(dicMain);
