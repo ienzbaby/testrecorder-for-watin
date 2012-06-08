@@ -113,7 +113,7 @@ namespace XD.QQ
             if (this.Curror == long.MinValue)
             {
                 DataTable dt = dal.ExecuteSql("select top 1 id  from QQ_Actor where state=0").Tables[0];
-                this.Curror = long.Parse(dt.Rows[0][0].ToString());
+                if (dt.Rows.Count > 0) this.Curror = long.Parse(dt.Rows[0][0].ToString());
             }
         }
         /// <summary>
