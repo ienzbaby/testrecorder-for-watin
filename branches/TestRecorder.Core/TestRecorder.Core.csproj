@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{08D27B73-1219-4814-9C92-6E0342FCCD3A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestRecorder.Core</RootNamespace>
+    <AssemblyName>TestRecorder.Core</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Microsoft.mshtml.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WatiN, Version=2.1.0.1196, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\WatiN.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\ActionList.cs" />
+    <Compile Include="Core\Actions\ActionAlertHandler.cs" />
+    <Compile Include="Core\Actions\ActionBack.cs" />
+    <Compile Include="Core\Actions\ActionBase.cs" />
+    <Compile Include="Core\Actions\ActionCloseWindow.cs" />
+    <Compile Include="Core\Actions\ActionConfirmHandler.cs" />
+    <Compile Include="Core\Actions\ActionContext.cs" />
+    <Compile Include="Core\Actions\ActionDirectionKey.cs" />
+    <Compile Include="Core\Actions\ActionFireEvent.cs" />
+    <Compile Include="Core\Actions\ActionForward.cs" />
+    <Compile Include="Core\Element\ActionHightlight.cs" />
+    <Compile Include="Core\Actions\ActionKey.cs" />
+    <Compile Include="Core\Actions\ActionNavigate.cs" />
+    <Compile Include="Core\Actions\ActionOpenPopup.cs" />
+    <Compile Include="Core\Actions\ActionOpenWindow.cs" />
+    <Compile Include="Core\Actions\ActionRefresh.cs" />
+    <Compile Include="Core\Actions\ActionSleep.cs" />
+    <Compile Include="Core\Actions\ActionThread.cs" />
+    <Compile Include="Core\Actions\ElementTypes.cs" />
+    <Compile Include="Core\Actions\Enums.cs" />
+    <Compile Include="Core\Actions\FindAttribute.cs" />
+    <Compile Include="Core\Actions\FindAttributeCollection.cs" />
+    <Compile Include="Core\Actions\FindMethods.cs" />
+    <Compile Include="Core\Actions\JavascriptHandler.cs" />
+    <Compile Include="Core\BrowserTypes.cs" />
+    <Compile Include="Core\BrowserWindow.cs" />
+    <Compile Include="Core\CodeGenerator.cs" />
+    <Compile Include="Core\Element\ActionCheckbox.cs" />
+    <Compile Include="Core\Element\ActionClick.cs" />
+    <Compile Include="Core\Element\ActionDoubleClick.cs" />
+    <Compile Include="Core\Element\ActionElementBase.cs" />
+    <Compile Include="Core\Element\ActionFileDialog.cs" />
+    <Compile Include="Core\Element\ActionMouse.cs" />
+    <Compile Include="Core\Element\ActionRadio.cs" />
+    <Compile Include="Core\Element\ActionSelectList.cs" />
+    <Compile Include="Core\Element\ActionTestElement.cs" />
+    <Compile Include="Core\Element\ActionTypeText.cs" />
+    <Compile Include="Core\Element\ActionWait.cs" />
+    <Compile Include="Core\Formatters\CodeLine.cs" />
+    <Compile Include="Core\Formatters\CSharpCodeFormatter.cs" />
+    <Compile Include="Core\Formatters\ICodeFormatter.cs" />
+    <Compile Include="Core\Formatters\PerlCodeFormatter.cs" />
+    <Compile Include="Core\Formatters\PhpCodeFormatter.cs" />
+    <Compile Include="Core\Formatters\PythonCodeFormatter.cs" />
+    <Compile Include="Core\Formatters\RubyCodeFormatter.cs" />
+    <Compile Include="Core\Formatters\VBNetCodeFormatter.cs" />
+    <Compile Include="Core\IUcBaseEditor.cs" />
+    <Compile Include="Core\LoadContext.cs" />
+    <Compile Include="Core\Helper.cs" />
+    <Compile Include="Core\WebPage.cs" />
+    <Compile Include="Core\Delegates.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\ucBaseEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucBaseEditor.Designer.cs">
+      <DependentUpon>ucBaseEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucBaseElement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucBaseElement.Designer.cs">
+      <DependentUpon>ucBaseElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucClick.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucClick.Designer.cs">
+      <DependentUpon>ucClick.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucFileUpload.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucFileUpload.Designer.cs">
+      <DependentUpon>ucFileUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucFireEvent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucFireEvent.Designer.cs">
+      <DependentUpon>ucFireEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucJavascript.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucJavascript.Designer.cs">
+      <DependentUpon>ucJavascript.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucKey.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucKey.Designer.cs">
+      <DependentUpon>ucKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucMouse.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucMouse.Designer.cs">
+      <DependentUpon>ucMouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucNavigate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucNavigate.Designer.cs">
+      <DependentUpon>ucNavigate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucSelectList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucSelectList.Designer.cs">
+      <DependentUpon>ucSelectList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucSleep.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucSleep.Designer.cs">
+      <DependentUpon>ucSleep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucTestElement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucTestElement.Designer.cs">
+      <DependentUpon>ucTestElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucTypeText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucTypeText.Designer.cs">
+      <DependentUpon>ucTypeText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucWait.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucWait.Designer.cs">
+      <DependentUpon>ucWait.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Actions\CD.cd" />
+    <None Include="Core\Element\elem.cd" />
+    <None Include="Core\Formatters\CD.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UserControls\ucBaseEditor.resx">
+      <DependentUpon>ucBaseEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucBaseElement.resx">
+      <DependentUpon>ucBaseElement.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucClick.resx">
+      <DependentUpon>ucClick.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucFileUpload.resx">
+      <DependentUpon>ucFileUpload.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucFireEvent.resx">
+      <DependentUpon>ucFireEvent.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucJavascript.resx">
+      <DependentUpon>ucJavascript.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucKey.resx">
+      <DependentUpon>ucKey.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucMouse.resx">
+      <DependentUpon>ucMouse.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucNavigate.resx">
+      <DependentUpon>ucNavigate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucSelectList.resx">
+      <DependentUpon>ucSelectList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucSleep.resx">
+      <DependentUpon>ucSleep.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucTestElement.resx">
+      <DependentUpon>ucTestElement.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucTypeText.resx">
+      <DependentUpon>ucTypeText.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucWait.resx">
+      <DependentUpon>ucWait.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

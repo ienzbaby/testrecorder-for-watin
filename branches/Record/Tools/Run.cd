@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TestRecorder.Core.RunThreaded" Collapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <Members>
+      <Method Name="RunStep" Hidden="true" />
+      <Method Name="RunTestInstance" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="TestRecorder.Core.RunThreaded.ActionCounterIncrementedEvent" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Core\RunThreaded.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="TestRecorder.Core.RunThreaded.RunCompleteEvent" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Core\RunThreaded.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="TestRecorder.Core.RunThreaded.BreakpointEvent" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Core\RunThreaded.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="TestRecorder.Core.RunThreaded.ActionStatusEvent" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Core\RunThreaded.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAIIAABAAAAAAAAAAMQAJBAAAAQAQAAQAAAAA=</HashCode>
+      <FileName>Core\RunThreaded.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Core.ActionList">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="TestRecorder.Tools.ScriptManager">
+    <Position X="5.5" Y="0.5" Width="2.75" />
+    <Members>
+      <Method Name="AddAction" Hidden="true" />
+      <Method Name="AssemblyAlreadyInList" Hidden="true" />
+      <Field Name="BlnFileDialogFound" Hidden="true" />
+      <Field Name="CurrentLoadContext" Hidden="true" />
+      <Field Name="FileActiveElement" Hidden="true" />
+      <Method Name="FileDialogFound" Hidden="true" />
+      <Field Name="FileElementBrowser" Hidden="true" />
+      <Method Name="GetActionContext" Hidden="true" />
+      <Method Name="GetCodeFile" Hidden="true" />
+      <Method Name="GetElementAttr" Hidden="true" />
+      <Method Name="GetValueOfElement" Hidden="true" />
+      <Method Name="GetValueOfLast" Hidden="true" />
+      <Method Name="InsertAction" Hidden="true" />
+      <Field Name="lastTypeHashCode" Hidden="true" />
+      <Field Name="lastTypeValue" Hidden="true" />
+      <Method Name="LoadActionList" Hidden="true" />
+      <Method Name="RunScriptOutput" Hidden="true" />
+      <Field Name="sbKeys" Hidden="true" />
+      <Field Name="TimerFileDialog" Hidden="true" />
+      <Method Name="TimerFileDialogElapsed" Hidden="true" />
+      <Method Name="WatchFileUploadBox" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Struct Name="TestRecorder.Tools.ScriptManager.RECT" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Tools\ScriptManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Struct Name="TestRecorder.Tools.ScriptManager.WINDOWINFO" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Tools\ScriptManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>xBAAIEIigAQAhEBQABAwaIFCCQIKAAYSsgBUqBEmCAI=</HashCode>
+      <FileName>Tools\ScriptManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Tools.RunnerManager">
+    <Position X="2.5" Y="0.5" Width="2" />
+    <Members>
+      <Field Name="BreakpointSleep" Hidden="true" />
+      <Field Name="Current" Hidden="true" />
+      <Field Name="CurrentAction" Hidden="true" />
+      <Field Name="currentList" Hidden="true" />
+      <Method Name="RunInnerTest" Hidden="true" />
+      <Method Name="RunTestInstance" Hidden="true" />
+      <Field Name="SingleStep" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AQAICACQAIAABAAAAwCAEAAMQAJEAAAJcAACEQAAAAI=</HashCode>
+      <FileName>Tools\RunnerMachine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="SimSun" Size="9" />
+</ClassDiagram>

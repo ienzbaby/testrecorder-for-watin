@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TestRecorder.Core.Formatters.CodeLine">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAQABAAAAAAAAEAAEAAAAQAAAAAAAAgAAAAAAAAAE=</HashCode>
+      <FileName>Core\Formatters\CodeLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="TestRecorder.Core.ICodeFormatter">
+    <Position X="4.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>EAAEEACQEIAAAAAgkAASAAAAAAAAUAAAAAAAEAAAgAA=</HashCode>
+      <FileName>Core\Formatters\ICodeFormatter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
