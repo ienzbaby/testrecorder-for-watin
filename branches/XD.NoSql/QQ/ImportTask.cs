@@ -50,7 +50,7 @@ namespace XD.QQ
         }
         public void Execute(XmlElement xElement)
         {
-            if (xElement.Attributes["path"] != null)//=====读取路径===
+            if (xElement!=null && xElement.Attributes["path"] != null)//=====读取路径===
                 this.SearchPath = xElement.Attributes["path"].Value;
             
             dtTemplate = manager.GetRecordByRowNumber(0, 1, "").Tables[0];
@@ -70,7 +70,7 @@ namespace XD.QQ
                 }
                 catch (Exception err)
                 {
-                    log.WriteLine("File Read Error{0}:{1}", err.Message, err.StackTrace);
+                    log.ErrorFormat("File Read Error{0}:{1}", err.Message, err.StackTrace);
                 }
 
                 if (dicMain.Count > 0) this.SqlBulkImport(dicMain);
@@ -127,11 +127,11 @@ namespace XD.QQ
                     int count2 = manager.Count();
 
                     Total += count2 - count1;
-                    Console.WriteLine("total add={0},current add={1}/{2},row count={3}",Total,count2-count1,dtImport.Rows.Count,count2);
+                    log.WarnFormat("total add={0},current add={1}/{2},row count={3}",Total,count2-count1,dtImport.Rows.Count,count2);
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("BulkCopy Error:{0}", ex.Message);
+                    log.ErrorFormat("BulkCopy Error:{0}", ex.Message);
 
                     //DataView dv = dtImport.DefaultView;
                     //DataTable dtNew = dv.ToTable(true, new string[] { "Id" });
@@ -153,7 +153,7 @@ namespace XD.QQ
         /// <param name="e"></param>
         private void OnSqlRowsCopied(object sender, SqlRowsCopiedEventArgs e)
         {
-            Console.WriteLine("[{2}]当前进度：{0}/{1}", e.RowsCopied,CurrentNum,sw.Elapsed);
+            log.WarnFormat("[{2}]当前进度：{0}/{1}", e.RowsCopied,CurrentNum,sw.Elapsed);
         }
         /// <summary>
         /// 从好友列表导入数据

@@ -21,11 +21,11 @@ namespace XD.QQ.Tests
         [Test(Description = "从NodeJs下载的文件中导入数据")]
         public void ExcuteTaskOnce()
         {
-            string path = @"E:\nodejs\Data";
+            //string path = @"E:\nodejs\Data";
+
             ImportTask task = new ImportTask();
-            //task.SearchPath = path;
             task.Execute(null);
-            Console.WriteLine("完成目录[{0}]的数据导入！", path);
+            Console.WriteLine("完成目录的数据导入！");
         }
         [Test]
         public void ImportFromData()
