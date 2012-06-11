@@ -124,7 +124,7 @@ namespace XD.QQ
         private IList<string> GetUnUsedFrmoCache(int num)
         {
             this.InitCurror();//初始化游标
-            long offset = long.MaxValue / 10000;
+            long offset = long.MaxValue / 1000;
 
             long caches = 0;
             while (caches <= 0)
