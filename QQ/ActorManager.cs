@@ -117,14 +117,14 @@ namespace XD.QQ
             }
         }
         /// <summary>
-        /// 生成缓存
+        /// 生成缓存,随着数据量的增大，需要调整检索的步伐
         /// </summary>
         /// <param name="num"></param>
         /// <returns></returns>
         private IList<string> GetUnUsedFrmoCache(int num)
         {
             this.InitCurror();//初始化游标
-            long offset = long.MaxValue / 1000;
+            long offset = long.MaxValue / 10000;
 
             long caches = 0;
             while (caches <= 0)
