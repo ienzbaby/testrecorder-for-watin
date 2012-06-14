@@ -27,7 +27,7 @@ namespace XD.QQ
         private long CurrentNum = 0;
         private string ConnStr = ConfigurationManager.AppSettings["ConnectionString"];
         private int PerBatchSize = 1000;
-        private int MaxBatchSize = 5000;
+        private int MaxBatchSize = 10000;
         private Stopwatch sw = new Stopwatch();
         private ILog log = LogManager.GetLogger(typeof(ImportUinTask));
         
