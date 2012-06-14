@@ -151,7 +151,7 @@ namespace XD.QQ
                 JavaScriptArray mods = root["modvisitcount"] as JavaScriptArray;
                 if (mods != null && mods.Count > 0)
                 {
-                    var visit=(mods[0] as JavaScriptObject)["totalcount"];
+                    var visit=int.Parse((mods[0] as JavaScriptObject)["totalcount"].ToString());
                     foreach (JavaScriptObject item in root["items"] as JavaScriptArray)
                     {
                         DataRow dr = dtTemplate.NewRow();
