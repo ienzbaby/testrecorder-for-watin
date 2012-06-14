@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Threading;
 using NUnit.Framework;
 using XD.Tools.Tasks;
+using Newtonsoft.Json;
+using System.IO;
+using System.Text;
 
 namespace XD.QQ.Tests
 {
@@ -15,7 +18,7 @@ namespace XD.QQ.Tests
         {
             //string path = @"E:\nodejs\Data";
 
-            ImportTask task = new ImportTask();
+            ImportUinTask task = new ImportUinTask();
             task.Execute(null);
             Console.WriteLine("完成目录的数据导入！");
         }
