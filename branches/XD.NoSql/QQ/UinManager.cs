@@ -5,6 +5,7 @@ using XD.Tools;
 using XD.Tools.DBUtility;
 using System;
 using System.Text;
+using System.Threading;
 
 namespace XD.QQ
 {
@@ -16,7 +17,8 @@ namespace XD.QQ
         private IDataService dal = DataFactory.Instance();
         private ILog log = null;
         private long Curror = 0;//初始游标
-        
+        private long LockNum = 0;
+
         private UinManager()
         {
             log = LogManager.GetLogger(this.GetType());
@@ -80,21 +82,25 @@ delete QQ_Uin_Cache where Id between @min and @max
         private IList<string> GetUnUsedFrmoCache(int num)
         {
             this.InitCurror();//初始化游标
-            long offset = long.MaxValue / 1000;
+            //long offset = long.MaxValue / 1000;
 
-            string sql = string.Format(@"
+            if (Interlocked.Read(ref LockNum) == 0)
+            {
+                Interlocked.Exchange(ref LockNum, 0);
+
+                string sql = string.Format(@"
                 insert QQ_Uin_Cache 
                 select id from QQ_Uin where id between {0}  and  {1} and state=0
                 update QQ_Uin set state=1 where id between {0}  and  {1} and state=0
                 select count(*) as cnt from QQ_Cache",
-            Curror, int.MaxValue);
+                Curror, int.MaxValue);
 
-            DataTable dt = dal.ExecuteSql(sql).Tables[0];
-            long nums = long.Parse(dt.Rows[0][0].ToString());
+                DataTable dt = dal.ExecuteSql(sql).Tables[0];
+                Interlocked.Exchange(ref LockNum, 1);
 
-            Curror += offset;
-
-            return this.GetUnUsed(num);
+                return this.GetUnUsed(num);
+            }
+            return new List<string>();
         }
         /// <summary>
         /// 取得分页数据
