@@ -51,6 +51,7 @@ namespace XD.QQ
                 dtTemplate = new DataTable();
                 dtTemplate.Columns.Add("id", typeof(long));
                 dtTemplate.Columns.Add("name", typeof(string));
+                dtTemplate.Columns.Add("visit", typeof(int));
                 dtTemplate.Columns.Add("state", typeof(int));
             }
             dtTemplate.Clear();
