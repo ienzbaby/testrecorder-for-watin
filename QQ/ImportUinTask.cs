@@ -148,19 +148,14 @@ namespace XD.QQ
             JavaScriptObject root = JavaScriptConvert.DeserializeObject(content) as JavaScriptObject;
             if (root != null && root.ContainsKey("items") && root.ContainsKey("modvisitcount"))
             {
-                JavaScriptArray mods = root["modvisitcount"] as JavaScriptArray;
-                if (mods != null && mods.Count > 0)
+                foreach (JavaScriptObject item in root["items"] as JavaScriptArray)
                 {
-                    var visit=int.Parse((mods[0] as JavaScriptObject)["totalcount"].ToString());
-                    foreach (JavaScriptObject item in root["items"] as JavaScriptArray)
-                    {
-                        DataRow dr = dtTemplate.NewRow();
-                        dr["id"] = item["uin"];
-                        dr["name"] = item["name"];
-                        dr["state"] = 0;
-                        dr["visit"] = visit;
-                        dtTemplate.Rows.Add(dr);
-                    }
+                    DataRow dr = dtTemplate.NewRow();
+                    dr["id"] = item["uin"];
+                    dr["name"] = item["name"];
+                    dr["state"] = 0;
+                    dr["visit"] = item["time"];
+                    dtTemplate.Rows.Add(dr);
                 }
             }
             else
