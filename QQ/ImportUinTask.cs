@@ -146,21 +146,15 @@ namespace XD.QQ
             if (content.Length == 0) return;
 
             JavaScriptObject root = JavaScriptConvert.DeserializeObject(content) as JavaScriptObject;
-            if (root != null && root.ContainsKey("items") && root.ContainsKey("modvisitcount"))
+            foreach (string key in root.Keys)
             {
-                foreach (JavaScriptObject item in root["items"] as JavaScriptArray)
-                {
-                    DataRow dr = dtTemplate.NewRow();
-                    dr["id"] = item["uin"];
-                    dr["name"] = item["name"];
-                    dr["state"] = 0;
-                    dr["visit"] = item["time"];
-                    dtTemplate.Rows.Add(dr);
-                }
-            }
-            else
-            {
-                File.WriteAllText(path.Replace("data", "error"), content);
+                JavaScriptObject item = root[key] as JavaScriptObject;
+                DataRow dr = dtTemplate.NewRow();
+                dr["id"] = item["uin"];
+                dr["name"] = item["name"];
+                dr["state"] = 0;
+                dr["visit"] = item["time"];
+                dtTemplate.Rows.Add(dr);
             }
         }
     }
