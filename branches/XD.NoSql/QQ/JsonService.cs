@@ -10,6 +10,7 @@ namespace XD.QQ
     public class JsonServices:JsonHelperBase
     {
         private static ActorManager manager = ActorManager.Instance();
+        private static UinManager uin = UinManager.Instance();
         /// <summary>
         /// 处理上下文
         /// </summary>
@@ -17,7 +18,7 @@ namespace XD.QQ
         public static void ProcessRequest(HttpContext context)
         {
             string mod = GetSecurityParam(context, "mod", "");
-            if (mod == "qq")
+            if (mod == "actor")
             {
                 string act = GetSecurityParam(context, "act", "");
                 if (act == "getunused")
@@ -76,6 +77,27 @@ namespace XD.QQ
                 else
                 {
                     throw new NotImplementedException(string.Format("未实现的接口mod=qq,act={0}", act));
+                }
+            }
+            else if (mod == "uin")
+            {
+                string act = GetSecurityParam(context, "act", "");
+                if (act == "getunused")
+                {
+                    string num = GetSecurityParam(context, "num", "1");
+                    IList<string> list = uin.GetUnUsed(int.Parse(num));
+
+                    JavaScriptObject root = new JavaScriptObject();
+                    root.Add("errno", "0");
+                    root.Add("items", JsonServices.DeserializeArray(list));
+                    context.Response.Write(JavaScriptConvert.SerializeObject(root));
+                }
+                else if (act == "rows")
+                {
+                    JavaScriptObject root = new JavaScriptObject();
+                    root.Add("errno", "0");
+                    root.Add("item", uin.Count());
+                    context.Response.Write(JavaScriptConvert.SerializeObject(root));
                 }
             }
             else

@@ -64,8 +64,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QQ\Actor.cs" />
     <Compile Include="QQ\ActorManager.cs" />
+    <Compile Include="QQ\UinManager.cs" />
+    <Compile Include="QQ\ImportUinTask.cs" />
     <Compile Include="QQ\FileEnumerable.cs" />
-    <Compile Include="QQ\ImportTask.cs" />
+    <Compile Include="QQ\ImportActorTask.cs" />
     <Compile Include="QQ\InnerEnumerator.cs" />
     <Compile Include="QQ\JsonService.cs" />
     <Compile Include="QQ\WIN32_FIND_DATA.cs" />
