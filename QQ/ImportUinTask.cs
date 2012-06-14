@@ -19,8 +19,7 @@ namespace XD.QQ
     /// </summary>
     public class ImportUinTask : ITask
     {
-        public int Total = 0; //数量
-
+        private int Total = 0; //数量
         private UinManager manager = UinManager.Instance();
         private string SearchPath = @"E:\nodejs\Data";
         private DataTable dtTemplate;

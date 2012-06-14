@@ -13,9 +13,10 @@ namespace XD.QQ
     /// </summary>
     public sealed class UinManager:AbstractSingleton<UinManager>
     {
-        IDataService dal = DataFactory.Instance();
-        ILog log=null;
-        private long Curror = long.MinValue;//初始游标
+        private IDataService dal = DataFactory.Instance();
+        private ILog log = null;
+        private long Curror = 0;//初始游标
+        
         private UinManager()
         {
             log = LogManager.GetLogger(this.GetType());
@@ -65,9 +66,9 @@ delete QQ_Uin_Cache where Id between @min and @max
         }
         private void InitCurror()
         {
-            if (this.Curror == long.MinValue)
+            if (this.Curror == 0)
             {
-                DataTable dt = dal.ExecuteSql("select top 1 id  from QQ_Actor where state=0").Tables[0];
+                DataTable dt = dal.ExecuteSql("select top 1 id  from QQ_Uin where state=0 order by id asc").Tables[0];
                 if (dt.Rows.Count > 0) this.Curror = long.Parse(dt.Rows[0][0].ToString());
             }
         }
@@ -81,11 +82,13 @@ delete QQ_Uin_Cache where Id between @min and @max
             this.InitCurror();//初始化游标
             long offset = long.MaxValue / 1000;
 
-            long caches = 0;
-            while (caches <= 0)
+            long nums = 0;
+            while (nums <= 0)
             {
-                if (Curror + offset > long.MaxValue) throw new OverflowException("超出长整形最大范围！");
-
+                if (Curror + offset > long.MaxValue)
+                {
+                    throw new OverflowException("超出长整形最大范围！");
+                }
                 string sql = string.Format(@"
                 insert QQ_Uin_Cache 
                 select id from QQ_Uin where id between {0}  and  {1} and state=0
@@ -94,7 +97,8 @@ delete QQ_Uin_Cache where Id between @min and @max
                 Curror, Curror + offset);
 
                 DataTable dt = dal.ExecuteSql(sql).Tables[0];
-                caches = long.Parse(dt.Rows[0][0].ToString());
+                nums = long.Parse(dt.Rows[0][0].ToString());
+
                 Curror += offset;
             }
             return this.GetUnUsed(num);
