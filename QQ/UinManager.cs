@@ -82,25 +82,18 @@ delete QQ_Uin_Cache where Id between @min and @max
             this.InitCurror();//初始化游标
             long offset = long.MaxValue / 1000;
 
-            long nums = 0;
-            while (nums <= 0)
-            {
-                if (Curror + offset > long.MaxValue)
-                {
-                    throw new OverflowException("超出长整形最大范围！");
-                }
-                string sql = string.Format(@"
+            string sql = string.Format(@"
                 insert QQ_Uin_Cache 
                 select id from QQ_Uin where id between {0}  and  {1} and state=0
                 update QQ_Uin set state=1 where id between {0}  and  {1} and state=0
                 select count(*) as cnt from QQ_Cache",
-                Curror, Curror + offset);
+            Curror, int.MaxValue);
 
-                DataTable dt = dal.ExecuteSql(sql).Tables[0];
-                nums = long.Parse(dt.Rows[0][0].ToString());
+            DataTable dt = dal.ExecuteSql(sql).Tables[0];
+            long nums = long.Parse(dt.Rows[0][0].ToString());
 
-                Curror += offset;
-            }
+            Curror += offset;
+
             return this.GetUnUsed(num);
         }
         /// <summary>
