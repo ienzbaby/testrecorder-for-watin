@@ -96,9 +96,8 @@ delete QQ_Uin_Cache where Id between @min and @max
                 Curror, int.MaxValue);
 
                 DataTable dt = dal.ExecuteSql(sql).Tables[0];
-                Interlocked.Exchange(ref LockNum, 1);
 
-                return this.GetUnUsed(num);
+                Interlocked.Exchange(ref LockNum, 1);
             }
             return new List<string>();
         }
