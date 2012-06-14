@@ -150,9 +150,13 @@ namespace XD.QQ
                 JavaScriptObject item = root[key] as JavaScriptObject;
                 DataRow dr = dtTemplate.NewRow();
                 dr["id"] = item["uin"];
-                dr["name"] = item["name"];
                 dr["state"] = 0;
                 dr["visit"] = item["time"];
+
+                var name = item["name"].ToString();
+                if (name.Length > 50) name = name.Substring(0, 50);
+                dr["name"] = name;//========截断长名称=======
+                
                 dtTemplate.Rows.Add(dr);
             }
         }
