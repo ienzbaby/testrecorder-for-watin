@@ -68,11 +68,8 @@ delete QQ_Uin_Cache where Id between @min and @max
         }
         private void InitCurror()
         {
-            if (this.Curror == 0)
-            {
-                DataTable dt = dal.ExecuteSql("select top 1 id  from QQ_Uin where state=0 order by id asc").Tables[0];
-                if (dt.Rows.Count > 0) this.Curror = long.Parse(dt.Rows[0][0].ToString());
-            }
+            DataTable dt = dal.ExecuteSql("select top 1 id  from QQ_Uin where state=0 order by id asc").Tables[0];
+            if (dt.Rows.Count > 0) this.Curror = long.Parse(dt.Rows[0][0].ToString());
         }
         /// <summary>
         /// 生成缓存,随着数据量的增大，需要调整检索的步伐
@@ -82,7 +79,7 @@ delete QQ_Uin_Cache where Id between @min and @max
         private IList<string> GetUnUsedFrmoCache(int num)
         {
             this.InitCurror();//初始化游标
-            //long offset = long.MaxValue / 1000;
+            long offset = long.MaxValue / 1000;
 
             if (Interlocked.Read(ref LockNum) == 0)
             {
@@ -93,7 +90,7 @@ delete QQ_Uin_Cache where Id between @min and @max
                 select id from QQ_Uin where id between {0}  and  {1} and state=0
                 update QQ_Uin set state=1 where id between {0}  and  {1} and state=0
                 select count(*) as cnt from QQ_Cache",
-                Curror, int.MaxValue);
+                Curror, this.Curror + offset);
 
                 DataTable dt = dal.ExecuteSql(sql).Tables[0];
 
