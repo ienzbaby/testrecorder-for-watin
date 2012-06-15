@@ -83,7 +83,7 @@ delete QQ_Uin_Cache where Id between @min and @max
 
             if (Interlocked.Read(ref LockNum) == 0)
             {
-                Interlocked.Exchange(ref LockNum, 0);
+                Interlocked.Exchange(ref LockNum,1);
 
                 string sql = string.Format(@"
                 insert QQ_Uin_Cache 
@@ -94,7 +94,7 @@ delete QQ_Uin_Cache where Id between @min and @max
 
                 DataTable dt = dal.ExecuteSql(sql).Tables[0];
 
-                Interlocked.Exchange(ref LockNum, 1);
+                Interlocked.Exchange(ref LockNum, 0);
             }
             return new List<string>();
         }
