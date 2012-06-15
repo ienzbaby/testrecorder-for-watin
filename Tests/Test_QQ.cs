@@ -43,12 +43,13 @@ namespace XD.QQ.Tests
         [Test]
         public void Exist()
         {
-            IList<long> ids = new List<long>();
-            ids.Add(-9223119721086940864);
-            ids.Add(-9223149);
+            Console.WriteLine(int.MaxValue);
+            Console.WriteLine(int.MaxValue / 100);
 
-            ids = manager.Exists(ids);
-            Console.WriteLine(ids.Count);
+            Console.WriteLine("----------------------------");
+
+            Console.WriteLine(long.MaxValue);
+            Console.WriteLine(long.MaxValue / 100);
         }
     }
 }
