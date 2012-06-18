@@ -29,7 +29,7 @@ namespace XD.QQ
 
                     JavaScriptObject root = new JavaScriptObject();
                     root.Add("errno", "0");
-                    root.Add("items", JsonServices.DeserializeArray(list));
+                    root.Add("items", DeserializeArray(list));
                     context.Response.Write(JavaScriptConvert.SerializeObject(root));
                 }
                 else if (act == "rows")
@@ -90,7 +90,7 @@ namespace XD.QQ
 
                     JavaScriptObject root = new JavaScriptObject();
                     root.Add("errno", "0");
-                    root.Add("items", JsonServices.DeserializeArray(list));
+                    root.Add("items", DeserializeArray(list));
                     context.Response.Write(JavaScriptConvert.SerializeObject(root));
                 }
                 else if (act == "rows")
@@ -102,14 +102,14 @@ namespace XD.QQ
                 }
                 else if (act == "getlist")
                 {
-                    string where = "1=1";
+                    string where = "1=1 and name!=''";
                     string id = GetSecurityParam(context, "id", "");
                     if (id.Length > 0) where += string.Format(" and Id='{0}'", id);
-                    DataTable dt = uin.GetRecordByRowNumber(100, 1, where).Tables[0];
+                    DataTable dt = uin.GetRecordByRowNumber(50, 1, where).Tables[0];
 
                     JavaScriptObject root = new JavaScriptObject();
                     root.Add("errno", "0");
-                    root.Add("items", JsonServices.DeserializeArray(dt.Rows));
+                    root.Add("items", DeserializeArray(dt.Rows));
                     context.Response.Write(JavaScriptConvert.SerializeObject(root));
                 }
             }
