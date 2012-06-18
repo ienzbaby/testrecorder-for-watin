@@ -65,9 +65,9 @@
     <Compile Include="QQ\Actor.cs" />
     <Compile Include="QQ\ActorManager.cs" />
     <Compile Include="QQ\UinManager.cs" />
-    <Compile Include="QQ\ImportUinTask.cs" />
+    <Compile Include="QQ\UinImportTask.cs" />
     <Compile Include="QQ\FileEnumerable.cs" />
-    <Compile Include="QQ\ImportActorTask.cs" />
+    <Compile Include="QQ\ActorImportTask.cs" />
     <Compile Include="QQ\InnerEnumerator.cs" />
     <Compile Include="QQ\JsonService.cs" />
     <Compile Include="QQ\WIN32_FIND_DATA.cs" />

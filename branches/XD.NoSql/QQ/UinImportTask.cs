@@ -17,7 +17,7 @@ namespace XD.QQ
     /// <summary>
     /// 通过字典缓存，提高执行效率
     /// </summary>
-    public class ImportUinTask : ITask
+    public class UinImportTask : ITask
     {
         private int Total = 0; //数量
         private UinManager manager = UinManager.Instance();
@@ -28,7 +28,7 @@ namespace XD.QQ
         private int PerBatchSize = 1000;
         private int MaxBatchSize = 10000;
         private Stopwatch sw = new Stopwatch();
-        private ILog log = LogManager.GetLogger(typeof(ImportUinTask));
+        private ILog log = LogManager.GetLogger(typeof(UinImportTask));
         
         private IEnumerable GetFiles()
         {
