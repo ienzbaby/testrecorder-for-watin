@@ -17,7 +17,7 @@ namespace XD.QQ
     /// <summary>
     /// 通过字典缓存，提高执行效率
     /// </summary>
-    public class ImportActorTask : ITask
+    public class ActorImportTask : ITask
     {
         public int Total = 0; //数量
 
@@ -29,7 +29,7 @@ namespace XD.QQ
         private string TableName = "QQ_Actor";
         private int PerBatchSize = 1000;
         private Stopwatch sw = new Stopwatch();
-        private ILog log = LogManager.GetLogger(typeof(ImportActorTask));
+        private ILog log = LogManager.GetLogger(typeof(ActorImportTask));
         
         private IEnumerable GetFiles()
         {

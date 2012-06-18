@@ -4,6 +4,7 @@ using System.Text;
 using XD.Tools;
 using System.Web;
 using Newtonsoft.Json;
+using System.Data;
 
 namespace XD.QQ
 {
@@ -97,6 +98,18 @@ namespace XD.QQ
                     JavaScriptObject root = new JavaScriptObject();
                     root.Add("errno", "0");
                     root.Add("item", uin.Count());
+                    context.Response.Write(JavaScriptConvert.SerializeObject(root));
+                }
+                else if (act == "getlist")
+                {
+                    string where = "1=1";
+                    string id = GetSecurityParam(context, "id", "");
+                    if (id.Length > 0) where += string.Format(" and Id='{0}'", id);
+                    DataTable dt = uin.GetRecordByRowNumber(100, 1, where).Tables[0];
+
+                    JavaScriptObject root = new JavaScriptObject();
+                    root.Add("errno", "0");
+                    root.Add("items", JsonServices.DeserializeArray(dt.Rows));
                     context.Response.Write(JavaScriptConvert.SerializeObject(root));
                 }
             }

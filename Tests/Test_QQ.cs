@@ -18,7 +18,7 @@ namespace XD.QQ.Tests
         {
             //string path = @"E:\nodejs\Data";
 
-            ImportUinTask task = new ImportUinTask();
+            UinImportTask task = new UinImportTask();
             task.Execute(null);
             Console.WriteLine("完成目录的数据导入！");
         }
