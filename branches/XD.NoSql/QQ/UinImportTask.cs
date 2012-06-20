@@ -78,16 +78,20 @@ namespace XD.QQ
 
                 //数据超过一定的阀值，则导入数据
                 if (dtTemplate.Rows.Count > MaxBatchSize)
-                    this.SqlBulkFromDataTable(dtTemplate, "QQ_Uin");
+                    this.SqlBulkFromDataTable("QQ_Uin");
             }
-            this.SqlBulkFromDataTable(dtTemplate, "QQ_Uin");
+            this.SqlBulkFromDataTable("QQ_Uin");
         }
         /// <summary>
         /// 批量导入数据
         /// </summary>
         /// <param name="dtImport"></param>
-        private void SqlBulkFromDataTable(DataTable dtImport, string tableName)
+        private void SqlBulkFromDataTable(string tableName)
         {
+            DataView dv=dtTemplate.DefaultView;
+            dv.Sort = "Id asc";
+            DataTable dtImport = dv.ToTable();
+
             CurrentNum = dtImport.Rows.Count;
             // Create the SqlBulkCopy object using a connection string. 
             // In the real world you would not use SqlBulkCopy to move
@@ -156,7 +160,7 @@ namespace XD.QQ
                 var name = item["name"].ToString();
                 if (name.Length > 50) name = name.Substring(0, 50);
                 dr["name"] = name;//========截断长名称=======
-                
+
                 dtTemplate.Rows.Add(dr);
             }
         }
