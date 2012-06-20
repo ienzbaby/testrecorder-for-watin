@@ -78,9 +78,9 @@ namespace XD.QQ
 
                 //数据超过一定的阀值，则导入数据
                 if (dtTemplate.Rows.Count > MaxBatchSize)
-                    this.SqlBulkFromDataTable("QQ_Uin");
+                    this.SqlBulkFromDataTable("QQ_Import");
             }
-            this.SqlBulkFromDataTable("QQ_Uin");
+            this.SqlBulkFromDataTable("QQ_Import");
         }
         /// <summary>
         /// 批量导入数据
@@ -88,11 +88,7 @@ namespace XD.QQ
         /// <param name="dtImport"></param>
         private void SqlBulkFromDataTable(string tableName)
         {
-            DataView dv=dtTemplate.DefaultView;
-            dv.Sort = "Id asc";
-            DataTable dtImport = dv.ToTable();
-
-            CurrentNum = dtImport.Rows.Count;
+            CurrentNum = dtTemplate.Rows.Count;
             // Create the SqlBulkCopy object using a connection string. 
             // In the real world you would not use SqlBulkCopy to move
             // data from one table to the other in the same database.
@@ -109,11 +105,11 @@ namespace XD.QQ
                 try
                 {
                     int count1 = manager.Count();
-                    bulkCopy.WriteToServer(dtImport);
+                    bulkCopy.WriteToServer(dtTemplate);
                     int count2 = manager.Count();
 
                     Total += count2 - count1;
-                    log.WarnFormat("total add={0},current add={1}/{2},row count={3}", Total, count2 - count1, dtImport.Rows.Count, count2);
+                    log.WarnFormat("total add={0},current add={1}/{2},row count={3}", Total, count2 - count1,CurrentNum, count2);
                 }
                 catch (Exception ex)
                 {
