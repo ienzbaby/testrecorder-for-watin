@@ -78,9 +78,9 @@ namespace XD.QQ
 
                 //数据超过一定的阀值，则导入数据
                 if (dtTemplate.Rows.Count > MaxBatchSize)
-                    this.SqlBulkFromDataTable("QQ_Uin");
+                    this.SqlBulkFromDataTable("QQ_Import");
             }
-            this.SqlBulkFromDataTable("QQ_Uin");
+            this.SqlBulkFromDataTable("QQ_Import");
         }
         /// <summary>
         /// 批量导入数据
