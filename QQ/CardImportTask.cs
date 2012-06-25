@@ -17,15 +17,16 @@ namespace XD.QQ
     /// <summary>
     /// 通过字典缓存，提高执行效率
     /// </summary>
-    public class UinImportTask : ITask
+    public class CardImportTask : ITask
     {
         private int Total = 0; //数量
         private UinManager manager = UinManager.Instance();
         private string SearchPath = @"E:\nodejs\Data";
-        private DataSet dsTemplate;
+        private DataTable dtTemplate;
+        private long CurrentNum = 0;
         private string ConnStr = ConfigurationManager.AppSettings["ConnectionString"];
         private int PerBatchSize = 1000;
-        private int MaxBatchSize = 5000;
+        private int MaxBatchSize = 10000;
         private Stopwatch sw = new Stopwatch();
         private ILog log = LogManager.GetLogger(typeof(UinImportTask));
         
@@ -42,22 +43,22 @@ namespace XD.QQ
         private void Init()
         {
             //======初始化======
-            if (dsTemplate == null)
+            CurrentNum = 0;
+
+            if (dtTemplate == null)
             {
-                dsTemplate = new DataSet();
-                for (int i = 0; i < 100; i++)
-                {
-                    DataTable dt = new DataTable("QQ_Uin_" + i);
-                    dt.Columns.Add("id", typeof(long));
-                    dt.Columns.Add("name", typeof(string));
-                    dt.Columns.Add("district", typeof(int));
-                    dt.Columns.Add("sex", typeof(int));
-                    dt.Columns.Add("age", typeof(int)); 
-                    dt.Columns.Add("title", typeof(int));
-                    dt.Columns.Add("state", typeof(int));
-                    dsTemplate.Tables.Add(dt);
-                }
+                dtTemplate = new DataTable();
+                dtTemplate.Columns.Add("id", typeof(long));
+                dtTemplate.Columns.Add("name", typeof(string));
+                dtTemplate.Columns.Add("sex", typeof(int));
+                dtTemplate.Columns.Add("age", typeof(int));
+                dtTemplate.Columns.Add("qzone", typeof(int));
+                dtTemplate.Columns.Add("viplevel", typeof(int));
+                dtTemplate.Columns.Add("score", typeof(int));
+                dtTemplate.Columns.Add("state", typeof(int));
+                dtTemplate.Columns.Add("title", typeof(string));
             }
+            dtTemplate.Clear();
             sw.Start();
 
         }
@@ -80,53 +81,40 @@ namespace XD.QQ
                     log.Error("File [" + path + "] Read Error", err);
                 }
 
-                this.SqlBulkFromDataSet(MaxBatchSize);
+                //数据超过一定的阀值，则导入数据
+                if (dtTemplate.Rows.Count > MaxBatchSize)
+                    this.SqlBulkFromDataTable("QQ_Import");
             }
-            this.SqlBulkFromDataSet(0);
-        }
-        private void SqlBulkFromDataSet(int num)
-        {
-            int inserts = 0;
-            int count1 = manager.Count();
-
-            foreach (DataTable dt in dsTemplate.Tables)
-            {
-                if (dt.Rows.Count > num)
-                {
-                    inserts += dt.Rows.Count;
-                    this.SqlBulkFromDataTable(dt);
-                }
-            }
-
-            if (inserts > 0)
-            {
-                int count2 = manager.Count();
-                Total += count2 - count1;
-                log.WarnFormat("total insert={0},current insert={1}/{2},row count={3}", Total, count2 - count1, inserts, count2);
-            }
+            this.SqlBulkFromDataTable("QQ_Import");
         }
         /// <summary>
         /// 批量导入数据
         /// </summary>
         /// <param name="dtImport"></param>
-        private void SqlBulkFromDataTable(DataTable dtTemplate)
+        private void SqlBulkFromDataTable(string tableName)
         {
+            CurrentNum = dtTemplate.Rows.Count;
             // Create the SqlBulkCopy object using a connection string. 
             // In the real world you would not use SqlBulkCopy to move
             // data from one table to the other in the same database.
             using (SqlBulkCopy bulkCopy = new SqlBulkCopy(ConnStr, SqlBulkCopyOptions.KeepIdentity | SqlBulkCopyOptions.TableLock))
             {
-                bulkCopy.DestinationTableName = dtTemplate.TableName;
+                bulkCopy.DestinationTableName = tableName;
                 bulkCopy.BatchSize = PerBatchSize;
                 bulkCopy.BulkCopyTimeout = 60000;
                 bulkCopy.NotifyAfter = PerBatchSize;
 
                 // Set up the event handler to notify after 50 rows.
                 bulkCopy.SqlRowsCopied += new SqlRowsCopiedEventHandler(OnSqlRowsCopied);
-                
+
                 try
                 {
+                    int count1 = manager.Count();
                     bulkCopy.WriteToServer(dtTemplate);
+                    int count2 = manager.Count();
+
+                    Total += count2 - count1;
+                    log.WarnFormat("total add={0},current add={1}/{2},row count={3}", Total, count2 - count1,CurrentNum, count2);
                 }
                 catch (Exception ex)
                 {
@@ -149,8 +137,7 @@ namespace XD.QQ
         /// <param name="e"></param>
         private void OnSqlRowsCopied(object sender, SqlRowsCopiedEventArgs e)
         {
-            SqlBulkCopy obj = sender as SqlBulkCopy;
-            log.WarnFormat("[{0}]当前进度：tablename={1},insert+={2}", sw.Elapsed,obj.DestinationTableName, e.RowsCopied);
+            log.WarnFormat("[{2}]当前进度：{0}/{1}", e.RowsCopied,CurrentNum,sw.Elapsed);
         }
         /// <summary>
         /// 从好友列表导入数据
@@ -166,31 +153,21 @@ namespace XD.QQ
             foreach (string key in root.Keys)
             {
                 JavaScriptObject item = root[key] as JavaScriptObject;
-                long id = long.Parse(item["uin"].ToString());
-                DataTable dt = dsTemplate.Tables[this.GetTableName(id)];
-                DataRow dr = dt.NewRow();
-                
-                dr["id"] =id;
-                dr["state"] = 0;
-                dr["title"] = item["time"];
-
-                var name = item["name"].ToString();
+                DataRow dr = dtTemplate.NewRow();
+                dr["id"] = item["uin"];
+                var name = item["nickname"].ToString();
                 if (name.Length > 50) name = name.Substring(0, 50);
-                dr["name"] = name;//========截断长名称=======
+                dr["name"] = name;
 
-                dt.Rows.Add(dr);
+                if (root.ContainsKey("qzone")) dr["qzone"] = root["qzone"];
+                if (root.ContainsKey("viplevel")) dr["viplevel"] = root["viplevel"];
+                if (root.ContainsKey("score")) dr["score"] = root["score"];
+                if (root.ContainsKey("offsetBirth")) dr["age"] = root["offsetBirth"];
+
+                dr["title"] = root["title"];
+                dr["state"] = 0;
+                dtTemplate.Rows.Add(dr);
             }
-        }
-
-        private string GetTableName(long id)
-        {
-            long offset = 30000000;
-            if (id < offset)
-                return "QQ_Uin_0";
-            else if (id > offset * 100)
-                return "QQ_Uin_99";
-            else
-                return "QQ_Uin_" + (id / offset);
         }
     }
 }
