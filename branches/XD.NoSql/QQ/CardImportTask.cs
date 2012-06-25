@@ -28,7 +28,7 @@ namespace XD.QQ
         private int PerBatchSize = 1000;
         private int MaxBatchSize = 10000;
         private Stopwatch sw = new Stopwatch();
-        private ILog log = LogManager.GetLogger(typeof(UinImportTask));
+        private ILog log = LogManager.GetLogger(typeof(CardImportTask));
         
         private IEnumerable GetFiles()
         {
@@ -48,15 +48,16 @@ namespace XD.QQ
             if (dtTemplate == null)
             {
                 dtTemplate = new DataTable();
-                dtTemplate.Columns.Add("id", typeof(long));
-                dtTemplate.Columns.Add("name", typeof(string));
-                dtTemplate.Columns.Add("sex", typeof(int));
-                dtTemplate.Columns.Add("age", typeof(int));
-                dtTemplate.Columns.Add("qzone", typeof(int));
-                dtTemplate.Columns.Add("viplevel", typeof(int));
-                dtTemplate.Columns.Add("score", typeof(int));
-                dtTemplate.Columns.Add("state", typeof(int));
-                dtTemplate.Columns.Add("title", typeof(string));
+                dtTemplate.Columns.Add("Id", typeof(long));
+                dtTemplate.Columns.Add("Name", typeof(string));
+                dtTemplate.Columns.Add("District", typeof(int));
+                dtTemplate.Columns.Add("Sex", typeof(int));
+                dtTemplate.Columns.Add("Age", typeof(int));
+                dtTemplate.Columns.Add("Qzone", typeof(int));
+                dtTemplate.Columns.Add("Viplevel", typeof(int));
+                dtTemplate.Columns.Add("Score", typeof(int));
+                dtTemplate.Columns.Add("Title", typeof(string)); 
+                dtTemplate.Columns.Add("State", typeof(int));
             }
             dtTemplate.Clear();
             sw.Start();
@@ -71,13 +72,15 @@ namespace XD.QQ
             foreach (string name in GetFiles())
             {
                 string path = SearchPath + @"\" + name;
+                string content=File.ReadAllText(path);
                 try
                 {
-                    this.ReadActorFromFile(path);
+                    this.ReadActorFromFile(content);
                     File.Delete(path);
                 }
                 catch (Exception err)
                 {
+                    File.WriteAllText(path.Replace("data","error"),content);
                     log.Error("File [" + path + "] Read Error", err);
                 }
 
@@ -143,10 +146,9 @@ namespace XD.QQ
         /// 从好友列表导入数据
         /// </summary>
         /// <param name="path"></param>
-        private void ReadActorFromFile(string path)
+        private void ReadActorFromFile(string content)
         {
-            string content = File.ReadAllText(path);
-            content = Regex.Unescape(content);
+            //content = Regex.Unescape(content);
             if (content.Length == 0) return;
 
             JavaScriptObject root = JavaScriptConvert.DeserializeObject(content) as JavaScriptObject;
@@ -154,18 +156,29 @@ namespace XD.QQ
             {
                 JavaScriptObject item = root[key] as JavaScriptObject;
                 DataRow dr = dtTemplate.NewRow();
-                dr["id"] = item["uin"];
-                var name = item["nickname"].ToString();
-                if (name.Length > 50) name = name.Substring(0, 50);
-                dr["name"] = name;
+                dr["Id"] = item["uin"];
+                dr["Name"] = "";
+                dr["District"] = 0; 
+                dr["Sex"] = 0;
+                dr["Age"] = 0;
+                dr["Qzone"] = 0;
+                dr["VipLevel"] = 0;
+                dr["Score"] = 0;
+                dr["Title"] = "";
+                dr["State"] = 0;
 
-                if (root.ContainsKey("qzone")) dr["qzone"] = root["qzone"];
-                if (root.ContainsKey("viplevel")) dr["viplevel"] = root["viplevel"];
-                if (root.ContainsKey("score")) dr["score"] = root["score"];
-                if (root.ContainsKey("offsetBirth")) dr["age"] = root["offsetBirth"];
-                if (root.ContainsKey("title")) dr["title"] = root["title"];
+                if (item.ContainsKey("nickname"))
+                {
+                    var name = item["nickname"].ToString();
+                    if (name.Length > 50) name = name.Substring(0, 50);
+                    dr["name"] = name;
+                }
+                if (item.ContainsKey("qzone")) dr["qzone"] = item["qzone"];
+                if (item.ContainsKey("viplevel")) dr["viplevel"] = item["viplevel"];
+                if (item.ContainsKey("score")) dr["score"] = item["score"];
+                if (item.ContainsKey("offsetBirth")) dr["age"] = item["offsetBirth"];
+                if (item.ContainsKey("title")) dr["title"] = item["title"];
                 
-                dr["state"] = 0;
                 dtTemplate.Rows.Add(dr);
             }
         }

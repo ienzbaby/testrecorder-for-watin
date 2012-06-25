@@ -22,7 +22,8 @@ namespace XD.QQ.Tests
             elem.SetAttribute("path",@"E:\nodejs\data");
 
             CardImportTask task = new CardImportTask();
-            task.Execute(null);
+            task.Execute(elem);
+
             Console.WriteLine("完成目录的数据导入！");
         }
         [Test(Description = "从NodeJs下载的文件中导入数据")]
