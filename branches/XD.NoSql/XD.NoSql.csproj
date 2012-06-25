@@ -64,6 +64,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QQ\Actor.cs" />
     <Compile Include="QQ\ActorManager.cs" />
+    <Compile Include="QQ\CardImportTask.cs" />
     <Compile Include="QQ\UinManager.cs" />
     <Compile Include="QQ\UinImportTask.cs" />
     <Compile Include="QQ\FileEnumerable.cs" />

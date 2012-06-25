@@ -6,6 +6,7 @@ using XD.Tools.Tasks;
 using Newtonsoft.Json;
 using System.IO;
 using System.Text;
+using System.Xml;
 
 namespace XD.QQ.Tests
 {
@@ -14,12 +15,26 @@ namespace XD.QQ.Tests
     {
         private ActorManager manager = ActorManager.Instance();
         [Test(Description = "从NodeJs下载的文件中导入数据")]
-        public void ExcuteTaskOnce()
+        public void ExcuteCardImportTask()
         {
-            //string path = @"E:\nodejs\Data";
+            XmlDocument doc = new XmlDocument();
+            XmlElement elem=  doc.CreateElement("root");
+            elem.SetAttribute("path",@"E:\nodejs\data");
+
+            CardImportTask task = new CardImportTask();
+            task.Execute(null);
+            Console.WriteLine("完成目录的数据导入！");
+        }
+        [Test(Description = "从NodeJs下载的文件中导入数据")]
+        public void ExcuteUinImportTask()
+        {
+            XmlDocument doc = new XmlDocument();
+            XmlElement elem = doc.CreateElement("root");
+            elem.SetAttribute("path", @"E:\nodejs\data");
 
             UinImportTask task = new UinImportTask();
             task.Execute(null);
+            
             Console.WriteLine("完成目录的数据导入！");
         }
         [Test]
