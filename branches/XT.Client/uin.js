@@ -114,10 +114,10 @@ function sendRequest(uin, page) {
     var options = {
         host: "g.qzone.qq.com",
         port: 80,
-        path: "/cgi-bin/friendshow/cgi_get_visitor_simple?mask=3&clear=1&sd=268140&g_tk=2017316776&uin=",
+        path: "/cgi-bin/friendshow/cgi_get_visitor_simple?mask=3&clear=1&sd=92860&g_tk=1720405857&uin=",
         uin: uin || '93641877',
         headers: {
-            'Cookie': '__Q_w_s_hat_seed=1; __Q_w_s__QZN_TodoMsgCnt=1; __Q_w_s__QZN_MailCnt=1; __Q_w_s__appDataSeed=1; pvid=5001284318; __Q_w_s__QZN_PYCnt=2; o_cookie=55643774; pgv_pvid=5001284318; __Q_w_s_wgt_sd=1; pt2gguin=o2419514474; uin=o2419514474; skey=@SIs8NrD4D; ptisp=cm; RK=bkTy+Ps2Tp; show_id=; ptui_loginuin=2419514474; Loading=Yes; pgv_info=ssid=s5035188260; login_time=1C3BEDA77535367F11881AC4263C5C617262BFD0E86E53A1; randomSeed=268140',
+            'Cookie': '__Q_w_s_hat_seed=1; __Q_w_s__QZN_TodoMsgCnt=1; __Q_w_s__QZN_MailCnt=1; __Q_w_s__appDataSeed=1; pvid=5001284318; __Q_w_s__QZN_PYCnt=2; o_cookie=55643774; pgv_pvid=5001284318; __Q_w_s_wgt_sd=1; RK=bkTy+Ps2Tp; pt2gguin=o2419514474; uin=o2419514474; skey=@Iw4kjdauy; ptisp=cm; show_id=; ptui_loginuin=2419514474; login_time=C7E9227D834DFB1647930034E3390F910B4CD73C0AEC2A2D; Loading=Yes; pgv_info=ssid=s9863286720;',
             'Accept-Charset': 'utf-8,GBK;q=0.7,*;q=0.3'
         },
         time: new Date()
