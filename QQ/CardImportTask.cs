@@ -83,9 +83,9 @@ namespace XD.QQ
 
                 //数据超过一定的阀值，则导入数据
                 if (dtTemplate.Rows.Count > MaxBatchSize)
-                    this.SqlBulkFromDataTable("QQ_Import");
+                    this.SqlBulkFromDataTable("QQ_Uin");
             }
-            this.SqlBulkFromDataTable("QQ_Import");
+            this.SqlBulkFromDataTable("QQ_Uin");
         }
         /// <summary>
         /// 批量导入数据
@@ -163,8 +163,8 @@ namespace XD.QQ
                 if (root.ContainsKey("viplevel")) dr["viplevel"] = root["viplevel"];
                 if (root.ContainsKey("score")) dr["score"] = root["score"];
                 if (root.ContainsKey("offsetBirth")) dr["age"] = root["offsetBirth"];
-
-                dr["title"] = root["title"];
+                if (root.ContainsKey("title")) dr["title"] = root["title"];
+                
                 dr["state"] = 0;
                 dtTemplate.Rows.Add(dr);
             }
