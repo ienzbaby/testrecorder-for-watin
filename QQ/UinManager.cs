@@ -104,7 +104,7 @@ select count(*) as cnt from QQ_Uin_Cache";
         /// <returns></returns>
         public DataSet GetRecordByRowNumber(int pageSize, int pageIndex,string strWhere)
         {
-            return DataFactory.GetRecordByRowNumber("QQ_Uin", "*", pageSize, pageIndex,0, "order by Id desc", strWhere);
+            return DataFactory.ExecuteSql("select top "+pageSize+" * from QQ_Uin");
         }
     }
 }
