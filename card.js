@@ -44,13 +44,13 @@ var Send = 0;
 var Recieve = 0;
 var IsSaving = false;
 var MaxFileNum = 7000;
-var MaxRequest = 8;
-var MaxPageSize = 1000;
+var MaxRequest = 10;
+var MaxPageSize = 5000;
 var TotalNum = 0;
 var CurrentNum = 0;
 var Requests = {};
 var Start = new Date();
-var Index=10000;
+var Index=284658;
 
 //sendRequest(10001,1);
 //设置定时器，查询未使用的
@@ -71,7 +71,7 @@ var timer = setInterval(function() {
     if (CurrentNum > MaxPageSize && IsSaving == false) { //==========保存数据===========
         IsSaving = true;
         var jsonStr = JSON.stringify(Actors);
-        var filename = 'data/' + (new Date()).getTime() + ".txt";
+        var filename = 'data2/' + (new Date()).getTime() + ".log";
         fs.writeFile(filename, jsonStr, function(err) {
             if (err) throw err; //console.log('saving file to ' + filename + ' success!,total=' + TotalNum);
             IsSaving = false;
