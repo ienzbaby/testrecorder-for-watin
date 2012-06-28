@@ -1,0 +1,586 @@
+﻿<!DOCTYPE html>
+<!-- BEGIN html -->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<!-- BEGIN head -->
+<head>
+    <meta name="viewport" content="user-scalable=no,initial-scale=1.0, maximum-scale=1.0 width=device-width" />
+    <!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
+    <!-- Meta Tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Title -->
+    <title>Fuel WordPress Theme</title>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    <!-- Le styles -->
+    <link href="http://fuel.danyduchaine.com/wp-content/themes/FuelWP/css/bootstrap.css"
+        rel="stylesheet">
+    <link href="http://fuel.danyduchaine.com/wp-content/themes/FuelWP/css/bootstrap-responsive.css"
+        rel="stylesheet">
+    <link rel="stylesheet" href="http://fuel.danyduchaine.com/wp-content/themes/FuelWP/style.css"
+        type="text/css" media="screen" />
+    <link href="http://fuel.danyduchaine.com/wp-content/themes/FuelWP/css/btn.css" rel="stylesheet">
+    <link href="http://fuel.danyduchaine.com/wp-content/themes/FuelWP/css/prettyPhoto.css"
+        rel="stylesheet">
+    <link href="http://fuel.danyduchaine.com/wp-content/themes/FuelWP/css/jplayer/jplayer.css"
+        rel="stylesheet">
+    <!-- RSS, Atom & Pingbacks -->
+    <link rel="alternate" type="application/rss+xml" title="Fuel WordPress Theme RSS Feed"
+        href="http://fuel.danyduchaine.com/feed/" />
+    <link rel="alternate" type="text/xml" title="RSS .92" href="http://fuel.danyduchaine.com/feed/rss/" />
+    <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://fuel.danyduchaine.com/feed/atom/" />
+    <link rel="pingback" href="http://fuel.danyduchaine.com/xmlrpc.php" />
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/ico/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/ico/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/ico/apple-touch-icon-114x114.png">
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:400,300' rel='stylesheet'
+        type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet'
+        type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700,400italic,700italic'
+        rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Copse' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet'
+        type='text/css'>
+    <!-- Theme Hook -->
+    <link rel="alternate" type="application/rss+xml" title="Fuel WordPress Theme &raquo; Feed"
+        href="http://fuel.danyduchaine.com/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="Fuel WordPress Theme &raquo; Comments Feed"
+        href="http://fuel.danyduchaine.com/comments/feed/" />
+    <link rel='stylesheet' id='contact-form-7-css' href='http://fuel.danyduchaine.com/wp-content/plugins/contact-form-7/styles.css?ver=3.1.2'
+        type='text/css' media='all' />
+
+    <script type='text/javascript' src='http://fuel.danyduchaine.com/wp-includes/js/jquery/jquery.js?ver=1.7.1'></script>
+    <script type='text/javascript' src='http://fuel.danyduchaine.com/wp-content/themes/FuelWP/js/twitter.js?ver=3.3.1'></script>
+    <script type='text/javascript' src='http://fuel.danyduchaine.com/wp-content/themes/FuelWP/js/script.js?ver=3.3.1'></script>
+    <script type='text/javascript' src='http://fuel.danyduchaine.com/wp-content/themes/FuelWP/js/jquery.prettyPhoto.js?ver=3.3.1'></script>
+    <script type='text/javascript' src='http://fuel.danyduchaine.com/wp-content/themes/FuelWP/js/jquery.isotope.min.js?ver=3.3.1'></script>
+    <script type='text/javascript' src='http://fuel.danyduchaine.com/wp-content/themes/FuelWP/js/bootstrap.js?ver=3.3.1'></script>
+    <script type='text/javascript' src='http://fuel.danyduchaine.com/wp-content/themes/FuelWP/js/formScript.js?ver=3.3.1'></script>
+    <script type='text/javascript' src='http://fuel.danyduchaine.com/wp-content/themes/FuelWP/js/jquery.jplayer.min.js?ver=3.3.1'></script>
+    <script type='text/javascript' src='http://fuel.danyduchaine.com/wp-content/themes/FuelWP/js/respond.min.js?ver=3.3.1'></script>
+    <script type='text/javascript' src='http://fuel.danyduchaine.com/wp-content/themes/FuelWP/js/slides.js?ver=3.3.1'></script>
+
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://fuel.danyduchaine.com/xmlrpc.php?rsd" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://fuel.danyduchaine.com/wp-includes/wlwmanifest.xml" />
+    <meta name="generator" content="WordPress 3.3.1" />
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="50" class="home blog">
+    <div id="large_bg_img" class="clearfix">
+        <div id="large_bg_img_overlay">
+        </div>
+        <img src="http://fuel.danyduchaine.com/wp-content/uploads/2012/04/bg9.jpg" id="image"
+            class="big" alt="" />
+    </div>
+    <!-- Navbar -->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></a><span
+                    class="brand">E: your@email.com | T: 1.514.508.5555</span>
+                <div class="nav-collapse">
+                    <ul id="main-nav" class="nav">
+                        <li id="menu-item-17" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-17">
+                            <a href="http://fuel.danyduchaine.com/">Home</a></li>
+                        <li id="menu-item-32" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32">
+                            <a href="#">Shortcodes</a>
+                            <ul class="sub-menu">
+                                <li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33">
+                                    <a href="http://fuel.danyduchaine.com/buttons/">Buttons</a></li>
+                                <li id="menu-item-70" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-70">
+                                    <a href="http://fuel.danyduchaine.com/columns/">Columns</a></li>
+                                <li id="menu-item-69" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-69">
+                                    <a href="http://fuel.danyduchaine.com/columns-w-sidebar/">Columns w/ Sidebar</a></li>
+                                <li id="menu-item-87" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-87">
+                                    <a href="http://fuel.danyduchaine.com/jquery/">jQuery Plugins</a></li>
+                            </ul>
+                        </li>
+                        <li id="menu-item-94" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-94">
+                            <a href="#">Browse Projects</a>
+                            <ul class="sub-menu">
+                                <li id="menu-item-95" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95">
+                                    <a href="http://fuel.danyduchaine.com/2-column-layout/">2 Columns Layout</a></li>
+                                <li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112">
+                                    <a href="http://fuel.danyduchaine.com/2-columns-sidebar/">2 Columns + Sidebar</a></li>
+                                <li id="menu-item-111" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-111">
+                                    <a href="http://fuel.danyduchaine.com/3-column-layout/">3 Columns Layout</a></li>
+                                <li id="menu-item-110" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-110">
+                                    <a href="http://fuel.danyduchaine.com/4-columns-layout/">4 Columns Layout</a></li>
+                            </ul>
+                        </li>
+                        <li id="menu-item-120" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-120">
+                            <a href="#">Articles &#038; Notes</a>
+                            <ul class="sub-menu">
+                                <li id="menu-item-122" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-122">
+                                    <a href="http://fuel.danyduchaine.com/blog-no-sidebar/">Blog No Sidebar</a></li>
+                                <li id="menu-item-121" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-121">
+                                    <a href="http://fuel.danyduchaine.com/blog-sidebar/">Blog + Sidebar</a></li>
+                                <li id="menu-item-201" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-201">
+                                    <a href="http://fuel.danyduchaine.com/2012/04/15/sdfasdfasd-fsdf-asdf/">Normal Single
+                                        Post</a></li>
+                                <li id="menu-item-202" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-202">
+                                    <a href="http://fuel.danyduchaine.com/2012/04/15/example-of-a-gallery-post-format/">
+                                        Gallery Single Post</a></li>
+                                <li id="menu-item-203" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-203">
+                                    <a href="http://fuel.danyduchaine.com/2012/04/15/example-of-a-video-post/">Video Single
+                                        Post</a></li>
+                                <li id="menu-item-204" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-204">
+                                    <a href="http://fuel.danyduchaine.com/2012/04/15/example-of-an-image-post-format/">Image
+                                        Single Post</a></li>
+                                <li id="menu-item-232" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-232">
+                                    <a href="http://fuel.danyduchaine.com/archives/">Archives</a></li>
+                            </ul>
+                        </li>
+                        <li id="menu-item-132" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-132">
+                            <a href="#">Hire Us</a>
+                            <ul class="sub-menu">
+                                <li id="menu-item-134" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-134">
+                                    <a href="http://fuel.danyduchaine.com/contact-page/">Contact Page</a></li>
+                                <li id="menu-item-133" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-133">
+                                    <a href="http://fuel.danyduchaine.com/client-testimonials/">Client Testimonials</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <span class="menu-right">E: your@email.com | T: 1.514.508.5555</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // End Of Navbar -->
+    <div class="black-bar">
+    </div>
+    <div id="wrap">
+        <!-- Main Container -->
+        <div class="container" id="main-content">
+            <!-- Header -->
+            <div class="row header">
+                <!-- Logo -->
+                <div class="span4">
+                    <div class="logo">
+                        <a href="http://fuel.danyduchaine.com">
+                            <h1 id="logo">
+                                <img src="http://fuel.danyduchaine.com/wp-content/uploads/2012/04/logo3.png" alt="" />
+                            </h1>
+                        </a>
+                    </div>
+                </div>
+                <!-- // End Of Logo -->
+                <!-- Social Icons -->
+                <div id="social" class="span5">
+                    <a rel="tooltip" data-original-title="YouTube" class="youtube social" href="sdfgsdf">
+                    </a><a rel="tooltip" data-original-title="Twitter" class="twitter2 social" href="http://www.twitter.com/asgasg">
+                    </a><a rel="tooltip" data-original-title="Dribbble" class="dribbble social" href="sdfgsdf">
+                    </a><a rel="tooltip" data-original-title="Facebook" class="facebook2 social" href="dfgsdfg">
+                    </a><a rel="tooltip" data-original-title="LinkedIn" class="linkedin social" href="sdfgsdfg">
+                    </a><a rel="tooltip" data-original-title="Vimeo" class="vimeo social" href="sdfgsdfg">
+                    </a>
+                </div>
+                <!-- // End Of Social Icons -->
+                <!-- Search Form -->
+                <div class="span3">
+                    <div id="searcharea">
+                        <form role="search" method="get" id="searchform" action="http://fuel.danyduchaine.com/">
+                        <div>
+                            <label class="screen-reader-text" for="s">
+                                Search for:</label>
+                            <input type="text" value="" name="s" id="s" />
+                            <input type="submit" id="searchsubmit" value="Search" />
+                        </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- // End Of Search Form -->
+            </div>
+            <!-- // End Of Header -->
+            <!-- Slider -->
+            <div class="row slider" id="slides">
+                <ul class="slides_container span12">
+                    <li class="slider-item active"><a href="#">
+                        <div class="span3 slider-imgs">
+                            <img src="http://fuel.danyduchaine.com/wp-content/themes/FuelWP/includes/timthumb.php?q=100&amp;w=270&amp;h=270&amp;zc=1&amp;src=http://fuel.danyduchaine.com/wp-content/uploads/2012/04/1.jpg"
+                                alt="THIS IS FUEL" class="slider-img" />
+                        </div>
+                    </a>
+                        <div class="span8 slider-text">
+                            <h1>
+                                THIS IS FUEL</h1>
+                            <p>
+                                Sed tempor velit sed orci sodales sit amet porta erat rhoncus. Quisque eget nulla
+                                non ligula tincidunt molestie. Etiam nec nulla eu metus lacinia adipiscing eget
+                                eget libero.</p>
+                            <p>
+                                Cras vitae rutrum nulla. Nulla sapien nisl, rutrum at congue eget, fringilla eget
+                                felis. Quisque eget nulla non ligula tincidunt molestie. Etiam nec nulla eu metus
+                                lacinia adipiscing eget eget libero.</p>
+                            <a class="salmon rounded3 button-big" href="http://fuel.danyduchaine.com/columns-w-sidebar/">
+                                Learn More About Fuel</a>
+                        </div>
+                    </li>
+                    <li class="slider-item active"><a href="#">
+                        <div class="span3 slider-imgs">
+                            <img src="http://fuel.danyduchaine.com/wp-content/themes/FuelWP/includes/timthumb.php?q=100&amp;w=270&amp;h=270&amp;zc=1&amp;src=http://fuel.danyduchaine.com/wp-content/uploads/2012/04/2.jpg"
+                                alt="RESPONSIVE THEME" class="slider-img" />
+                        </div>
+                    </a>
+                        <div class="span8 slider-text">
+                            <h1>
+                                RESPONSIVE THEME</h1>
+                            <p>
+                                Duis id ligula vitae dolor rhoncus malesuada eget ut sapien. Vivamus vitae ipsum
+                                nunc. Nulla sodales gravida neque ut elementum. Cras sit amet lorem quis ante fermentum
+                                dapibus semper sit amet justo.</p>
+                            <p>
+                                Donec molestie ipsum vitae mauris eleifend malesuada. Fusce tristique fermentum
+                                vulputate. Nunc quis nulla velit. Nulla sodales gravida neque ut elementum.</p>
+                            <p>
+                                Phasellus in urna dui, quis sodales ante. Aenean ac lacus nec ligula pharetra interdum
+                                ac vitae magna. Pellentesque quis auctor nisi. Aenean commodo eros non lectus adipiscing
+                                fringilla.</p>
+                            <a class="blue rounded3 button-big" href="http://fuel.danyduchaine.com/columns-w-sidebar/">
+                                Learn More About Fuel</a>
+                        </div>
+                    </li>
+                    <li class="slider-item active"><a href="http://themeforest.net/item/synapse-corporate-wordpress-theme/1470531?ref=danyduchaine">
+                        <div class="span3 slider-imgs">
+                            <img src="http://fuel.danyduchaine.com/wp-content/themes/FuelWP/includes/timthumb.php?q=100&amp;w=270&amp;h=270&amp;zc=1&amp;src=http://fuel.danyduchaine.com/wp-content/uploads/2012/04/syn.jpg"
+                                alt="SYNAPSE WP EDITION" class="slider-img" />
+                        </div>
+                    </a>
+                        <div class="span8 slider-text">
+                            <h1>
+                                SYNAPSE WP EDITION</h1>
+                            <p>
+                                Duis id ligula vitae dolor rhoncus malesuada eget ut sapien. Vivamus vitae ipsum
+                                nunc. Nulla sodales gravida neque ut elementum. Cras sit amet lorem quis ante fermentum
+                                dapibus semper sit amet justo.</p>
+                            <p>
+                                Donec molestie ipsum vitae mauris eleifend malesuada. Fusce tristique fermentum
+                                vulputate. Nunc quis nulla velit. Nulla sodales gravida neque ut elementum.</p>
+                            <p>
+                                Phasellus in urna dui, quis sodales ante. Aenean ac lacus nec ligula pharetra interdum
+                                ac vitae magna. Pellentesque quis auctor nisi. Aenean commodo eros non lectus adipiscing
+                                fringilla.</p>
+                            <a class="lightblue rounded3 button-big" href="http://themeforest.net/item/synapse-corporate-wordpress-theme/1470531?ref=danyduchaine">
+                                Learn More About Synapse WP</a>
+                        </div>
+                    </li>
+                </ul>
+                <!-- // End of Slider Nav -->
+            </div>
+            <!-- // End Of Slider -->
+            <ul class="widgets row clearfix">
+                <li class="span4">
+                    <div id="dd_testimonials_widget-2" class="dd_testimonials_widget">
+                        <!-- Testimonial Widgets -->
+                        <div id="testimonial-slides">
+                            <div class="slides_container">
+                                <!-- Testimonial Item -->
+                                <div class="testimonial-item active clearfix">
+                                    <div class="testimonial-meta clearfix">
+                                        <div class="testimonial-avatar">
+                                            <img src="http://fuel.danyduchaine.com/wp-content/themes/FuelWP/includes/timthumb.php?q=100&amp;w=50&amp;h=50&amp;zc=1&amp;src=http://fuel.danyduchaine.com/wp-content/uploads/2012/04/avatar11.png"
+                                                alt="" />
+                                        </div>
+                                        <div class="testimonial-info">
+                                            <span class="testimonial-name">Monique Ledett</span> <a href="http://moniqueledett.com"
+                                                class="testimonial-website"><span>http://moniqueledett.com</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-content clearfix">
+                                        <div class="testimonial-text">
+                                            <p>
+                                                Dany Duchaine have been superb. Their customer service is great.</p>
+                                            <p>
+                                                The guys there respond very quickly and go above and beyond to help.</p>
+                                            <p>
+                                                Quisque eget nulla non ligula tincidunt molestie. Etiam nec nulla eu metus lacinia
+                                                adipiscing eget eget libero.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // End Of Testimonial Item -->
+                                <!-- Testimonial Item -->
+                                <div class="testimonial-item active clearfix">
+                                    <div class="testimonial-meta clearfix">
+                                        <div class="testimonial-avatar">
+                                            <img src="http://fuel.danyduchaine.com/wp-content/themes/FuelWP/includes/timthumb.php?q=100&amp;w=50&amp;h=50&amp;zc=1&amp;src=http://fuel.danyduchaine.com/wp-content/uploads/2012/04/avatar6.png"
+                                                alt="" />
+                                        </div>
+                                        <div class="testimonial-info">
+                                            <span class="testimonial-name">Sean Smidth</span> <a href="http://seansmidth.com"
+                                                class="testimonial-website"><span>http://seansmidth.com</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-content clearfix">
+                                        <div class="testimonial-text">
+                                            <p>
+                                                Red Five standing by. You&#8217;re all clear, kid. Let&#8217;s blow this thing and
+                                                go home! Escape is not his plan. I must face him, alone.</p>
+                                            <p>
+                                                I need your help, Luke. She needs your help. I&#8217;m getting too old for this
+                                                sort of thing. What?!</p>
+                                            <p>
+                                                All right. Well, take care of yourself, Han. I guess that&#8217;s what you&#8217;re
+                                                best at, ain&#8217;t it?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // End Of Testimonial Item -->
+                                <!-- Testimonial Item -->
+                                <div class="testimonial-item active clearfix">
+                                    <div class="testimonial-meta clearfix">
+                                        <div class="testimonial-avatar">
+                                            <img src="http://fuel.danyduchaine.com/wp-content/themes/FuelWP/includes/timthumb.php?q=100&amp;w=50&amp;h=50&amp;zc=1&amp;src=http://fuel.danyduchaine.com/wp-content/uploads/2012/04/avatar5.png"
+                                                alt="" />
+                                        </div>
+                                        <div class="testimonial-info">
+                                            <span class="testimonial-name">Andrew Green</span> <a href="http://andrewgreen.com"
+                                                class="testimonial-website"><span>http://andrewgreen.com</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-content clearfix">
+                                        <div class="testimonial-text">
+                                            <p>
+                                                Partially, but it also obeys your commands. As you wish. All right. Well, take care
+                                                of yourself, Han.</p>
+                                            <p>
+                                                I guess that&#8217;s what you&#8217;re best at, ain&#8217;t it? What?! She must
+                                                have hidden the plans in the escape pod. Send a detachment down to retrieve them,
+                                                and see to it personally, Commander. There&#8217;ll be no one to stop us this time!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // End Of Testimonial Item -->
+                                <!-- Testimonial Item -->
+                                <div class="testimonial-item active clearfix">
+                                    <div class="testimonial-meta clearfix">
+                                        <div class="testimonial-avatar">
+                                            <img src="http://fuel.danyduchaine.com/wp-content/themes/FuelWP/includes/timthumb.php?q=100&amp;w=50&amp;h=50&amp;zc=1&amp;src=http://fuel.danyduchaine.com/wp-content/uploads/2012/04/avatar4.png"
+                                                alt="" />
+                                        </div>
+                                        <div class="testimonial-info">
+                                            <span class="testimonial-name">Isabella Lopez</span> <a href="http://isabellalopez.com"
+                                                class="testimonial-website"><span>http://isabellalopez.com</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-content clearfix">
+                                        <div class="testimonial-text">
+                                            <p>
+                                                I call it luck. Hokey religions and ancient weapons are no match for a good blaster
+                                                at your side, kid.</p>
+                                            <p>
+                                                Escape is not his plan. I must face him, alone. Partially, but it also obeys your
+                                                commands. I don&#8217;t know what you&#8217;re talking about. I am a member of the
+                                                Imperial Senate on a diplomatic mission to Alderaan&#8211;</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // End Of Testimonial Item -->
+                                <!-- Testimonial Item -->
+                                <div class="testimonial-item active clearfix">
+                                    <div class="testimonial-meta clearfix">
+                                        <div class="testimonial-avatar">
+                                            <img src="http://fuel.danyduchaine.com/wp-content/themes/FuelWP/includes/timthumb.php?q=100&amp;w=50&amp;h=50&amp;zc=1&amp;src=http://fuel.danyduchaine.com/wp-content/uploads/2012/04/avatar31.png"
+                                                alt="" />
+                                        </div>
+                                        <div class="testimonial-info">
+                                            <span class="testimonial-name">Janet Molson</span> <a href="http://janetmolson.com"
+                                                class="testimonial-website"><span>http://janetmolson.com</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-content clearfix">
+                                        <div class="testimonial-text">
+                                            <p>
+                                                I have traced the Rebel spies to her. Now she is my only link to finding their secret
+                                                base. Red Five standing by. What good is a reward if you ain&#8217;t around to use
+                                                it? Besides, attacking that battle station ain&#8217;t my idea of courage.</p>
+                                            <p>
+                                                It&#8217;s more like…suicide. Escape is not his plan. I must face him, alone.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // End Of Testimonial Item -->
+                                <!-- Testimonial Item -->
+                                <div class="testimonial-item active clearfix">
+                                    <div class="testimonial-meta clearfix">
+                                        <div class="testimonial-avatar">
+                                            <img src="http://fuel.danyduchaine.com/wp-content/themes/FuelWP/includes/timthumb.php?q=100&amp;w=50&amp;h=50&amp;zc=1&amp;src=http://fuel.danyduchaine.com/wp-content/uploads/2012/04/avatar2.png"
+                                                alt="" />
+                                        </div>
+                                        <div class="testimonial-info">
+                                            <span class="testimonial-name">Julia Tessa</span> <a href="http://juliatessa.com"
+                                                class="testimonial-website"><span>http://juliatessa.com</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-content clearfix">
+                                        <div class="testimonial-text">
+                                            <p>
+                                                Red Five standing by. You&#8217;re all clear, kid. Let&#8217;s blow this thing and
+                                                go home! Escape is not his plan. I must face him, alone.</p>
+                                            <p>
+                                                I need your help, Luke. She needs your help. I&#8217;m getting too old for this
+                                                sort of thing. What?!</p>
+                                            <p>
+                                                All right. Well, take care of yourself, Han. I guess that&#8217;s what you&#8217;re
+                                                best at, ain&#8217;t it?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // End Of Testimonial Item -->
+                                <!-- Testimonial Item -->
+                                <div class="testimonial-item active clearfix">
+                                    <div class="testimonial-meta clearfix">
+                                        <div class="testimonial-avatar">
+                                            <img src="http://fuel.danyduchaine.com/wp-content/themes/FuelWP/includes/timthumb.php?q=100&amp;w=50&amp;h=50&amp;zc=1&amp;src=http://fuel.danyduchaine.com/wp-content/uploads/2012/04/avatar1.png"
+                                                alt="" />
+                                        </div>
+                                        <div class="testimonial-info">
+                                            <span class="testimonial-name">Barbara O&#8217;Connor</span> <a href="http://barbaraoconnor.com"
+                                                class="testimonial-website"><span>http://barbaraoconnor.com</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-content clearfix">
+                                        <div class="testimonial-text">
+                                            <p>
+                                                Dany Duchaine have been superb. Their customer service is great.</p>
+                                            <p>
+                                                The guys there respond very quickly and go above and beyond to help.</p>
+                                            <p>
+                                                Quisque eget nulla non ligula tincidunt molestie. Etiam nec nulla eu metus lacinia
+                                                adipiscing eget eget libero.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // End Of Testimonial Item -->
+                            </div>
+                        </div>
+                        <!-- // End Of Testimonial Widgets -->
+                    </div>
+                </li>
+                <li class="span4">
+                    <div id="dd_post_widget-2" class="post-widget">
+                        <!-- blogwidget Widgets -->
+                        <div id="blogwidget-slides">
+                            <div class="slides_container">
+                                <!-- blogwidget Item -->
+                                <div class="blogwidget-item active">
+                                    <div class="blogwidget-img">
+                                        <a href="http://fuel.danyduchaine.com/2012/04/15/sdfasdfasd-fsdf-asdf/">
+                                            <img src="http://fuel.danyduchaine.com/wp-content/themes/FuelWP/includes/timthumb.php?q=100&amp;w=370&amp;zc=1&amp;src=http://fuel.danyduchaine.com/wp-content/uploads/2012/04/widget2.jpg"
+                                                alt="" /></a>
+                                    </div>
+                                    <div class="blogwidget-title">
+                                        <a href="http://fuel.danyduchaine.com/2012/04/15/sdfasdfasd-fsdf-asdf/">Interior Design
+                                            Project</a>
+                                    </div>
+                                    <div class="blogwidget-content clearfix">
+                                        <div class="blogwidget-text">
+                                            <div class="blogwidget-meta">
+                                                By <a href="http://fuel.danyduchaine.com/author/admin/" title="Posts by admin" rel="author">
+                                                    admin</a> on <a href="http://fuel.danyduchaine.com/2012/04/15/">April 15, 2012</a>
+                                            </div>
+                                            <p>
+                                                s you wish. Look, I ain&#8217;t in this for your revolution, and I&#8217;m not in
+                                                it for you, Princess. I expect to be well paid. [ ... ]</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // End of blogwidget Item -->
+                                <!-- blogwidget Item -->
+                                <div class="blogwidget-item active">
+                                    <div class="blogwidget-img">
+                                        <a href="http://fuel.danyduchaine.com/2012/04/15/example-of-a-normal-post/">
+                                            <img src="http://fuel.danyduchaine.com/wp-content/themes/FuelWP/includes/timthumb.php?q=100&amp;w=370&amp;zc=1&amp;src=http://fuel.danyduchaine.com/wp-content/uploads/2012/04/bg261.jpg"
+                                                alt="" /></a>
+                                    </div>
+                                    <div class="blogwidget-title">
+                                        <a href="http://fuel.danyduchaine.com/2012/04/15/example-of-a-normal-post/">Example
+                                            of a normal post</a>
+                                    </div>
+                                    <div class="blogwidget-content clearfix">
+                                        <div class="blogwidget-text">
+                                            <div class="blogwidget-meta">
+                                                By <a href="http://fuel.danyduchaine.com/author/admin/" title="Posts by admin" rel="author">
+                                                    admin</a> on <a href="http://fuel.danyduchaine.com/2012/04/15/">April 15, 2012</a>
+                                            </div>
+                                            <p>
+                                                As you wish. Look, I ain&#8217;t in this for your revolution, and I&#8217;m not
+                                                in it for you, Princess. I expect to be well paid. I&#8217;m in it for the money.
+                                                No! Alderaan is peaceful. We have no weapons. [ ... ]</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // End of blogwidget Item -->
+                            </div>
+                        </div>
+                        <!-- // End of blogwidget Widgets -->
+                    </div>
+                </li>
+                <li class="span4">
+                    <div id="dd_tweet_widget-3" class="dd_tweet_widget">
+                        <!-- Twitter Widgets -->
+                        <div id="twitter-slides">
+                            <div class="slides_container">
+                                <!-- Twitter Item -->
+                                <div class="twitter-item active">
+                                    <div class="twitter-meta clearfix">
+                                        <div class="twitter-avatar">
+                                            <a href="http://www.twitter.com/DDStudios">
+                                                <img src="http://twitter.com/api/users/profile_image?screen_name=DDStudios" /></a>
+                                        </div>
+                                        <div class="twitter-info">
+                                            <span class="testimonial-name">DDStudios</span> <a href="http://www.twitter.com/DDStudios"
+                                                class="testimonial-website"><span>Follow me on twitter</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="twitter-content clearfix">
+                                        <div class="tweet">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // End Of Twitter Item -->
+                            </div>
+                        </div>
+                        <!-- // End Of Twitter Widgets -->
+
+                        <script type='text/javascript'>
+
+                            jQuery(".tweet").tweet({
+                                username: "DDStudios",
+                                join_text: "",
+                                count: 3,
+                                auto_join_text_ed: "",
+                                auto_join_text_ing: "",
+                                auto_join_text_reply: "",
+                                auto_join_text_url: "",
+                                loading_text: "loading tweets..."
+                            })
+
+                        </script>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div id="footer">
+        <div class="navbar-inner">
+            <div class="container">
+                <span>Copyright © Fuel WordPress 2012. All rights reserved.</span>
+            </div>
+        </div>
+    </div>
+    <!-- // End Of Footer -->
+    <script type='text/javascript' src='http://fuel.danyduchaine.com/wp-content/plugins/contact-form-7/jquery.form.js?ver=3.08'></script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var _wpcf7 = { "loaderUrl": "http:\/\/fuel.danyduchaine.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif", "sending": "Sending ..." };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='http://fuel.danyduchaine.com/wp-content/plugins/contact-form-7/scripts.js?ver=3.1.2'></script>
+</body>
+</html>
