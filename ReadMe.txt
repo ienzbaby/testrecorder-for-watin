@@ -1,28 +1,14 @@
-¹¦ÄÜ¼ò½é£ºWatiN Test Recorder
-Application to record tests for the WatiN (web application testing for .Net) library. Tests can be saved and compiled into an executable or assembly.
-ÓÃÀ´¼ÇÂ¼ WatiN ²âÊÔµÄÓ¦ÓÃ£¬²âÊÔ½á¹û¿ÉÓÃ±£´æºÍ±àÖÆ³ÉÎª¼¯ºÏ¡£
--------------------------------------------------------------------
-demo.swf:ÊÓÆµ½Ì³Ì demo.jpg:½çÃæ¼ò½é
--------------------------------------------------------------------
-1¡¢  Éú³É¼æÈÝWaitNµÄUI²âÊÔ½Å±¾£»
-2¡¢  Ö§³ÖÉú³É¶àÖÖÓïÑÔµÄ½Å±¾£»
-3¡¢  ÓÃ»§¿É¶¨ÒåÉú³ÉÄ£°å£»
-4¡¢  Ç¶ÈëIEä¯ÀÀÆ÷£¬µ«Éú³ÉFirefox°æ±¾£»
-5¡¢  ¶ÔFrame,IframeµÄÖ§³Ö£»
-6¡¢  Ö§³ÖWatiNµÄ´ó²¿·Ö·½·¨
-7¡¢  ¶ÏµãºÍµ¥²½Ö§³Ö£»
-8¡¢  Ê¹ÓÃÄ£ÄâÊý¾ÝÖ§³ÖÍ¬Ò»¸ö½Å±¾
-9¡¢  ¿É²é¿´Html DOM½á¹¹£»
-10¡¢  ²é¿´WatiNÔªËØ£¬¿É¸ßÁÁÏÔÊ¾
-11¡¢  ¼ò»¯ÓÃ»§²Ù×÷£¬¸øÓÃ»§ÁôÏÂÀ©Õ¹½Ó¿Ú£¨javascript,jQuery£©£»
-12¡¢  ¼ò»¯°²×°£¬ÐÞ¸´Ô­ÏîÄ¿µÄBug£¬ÊµÏÖ²¿·ÖÒÅÁô¹¦ÄÜ
-13¡¢  ¶ÔÔ­ÏîÄ¿½øÐÐÖØ¹¹£¬½â³ýÒµÎñ²ãÓëÕ¹Ê¾²ãµÄñîºÏ£»
--------------------------------------------------------------------
-1¡¢ÔËÐÐ»·¾³ net framework 2.0,IE 7.0+
-2¡¢ÏîÄ¿ÏÂÔØ
-CsdnÏÂÔØµØÖ·: http://download.csdn.net/detail/haolihui9527/3793955
-Google ÏîÄ¿Ê×Ò³£ºhttps://code.google.com/p/testrecorder-for-watin/
-SvnµØÖ·£ºhttps://testrecorder-for-watin.googlecode.com/svn/trunk/
-3¡¢°²×°Ð¶ÔØ Ö±½ÓÔËÐÐ¸ùÄ¿Â¼ÏÂµÄIntall.bat,UnInstall.bat ÂÌÉ«»·±£
-   ¸ùÄ¿Â¼ÏÂÓÐ¸öBaidu.xmlµÄÎÄ¼þ£¬ÊÇÊ¾Àý½Å±¾£¬¿ÉÖ±½ÓÔËÐÐ¡£
-4¡¢ÔÚÏß½»Á÷Óë·´À¡ QQ:55643774  ²Ëµ¥->Help->FeedBack·¢ËÍÓÊ¼þ
+ï»¿var watin6 = document.getElementById('watin6');
+var newEvt = document.createEventObject();newEvt.button = 1;watin6.fireEvent('OnDoubleClick', newEvt);
+æ›´æ–°æ‰‹è®°ï¼š
+1ã€æ‰§è¡Œè„šæœ¬æ—¶ï¼Œå¦‚æžœæœ‰é€‰ä¸­ï¼Œåªæ‰§è¡Œå½“å‰é€‰ä¸­(å¼ æ™“é£ž 2011.11.08);
+2ã€è„šæœ¬çš„å¾ªçŽ¯æ‰§è¡Œé—®é¢˜ï¼Œå¢žåŠ å¾ªçŽ¯æ¬¡æ•°çš„è¾“å…¥æ¡†ï¼›
+3ã€ä¼˜åŒ–å…ƒç´ éåŽ†ã€å®šä½ä»£ç ï¼Œæä¾›æ‰§è¡Œæ•ˆçŽ‡ï¼›
+4ã€ä¿®å¤æ‰§è¡Œæ—¶ç¬¬ä¸€è¡Œä¸é€‰ä¸­çš„Bug;
+5ã€ä¿®å¤(æœ‰å…³è°ƒç”¨å®žæ—¶(JIT)è°ƒè¯•è€Œä¸æ˜¯æ­¤å¯¹è¯æ¡†çš„è¯¦ç»†ä¿¡æ¯,å¼ å²šæ›¹å…´å‘çŽ° 2011.11.09
+	if (wsManager == null || watinIE == null) return; //å°šæœªåˆå§‹åŒ–ï¼Œç›´æŽ¥è¿”å›ž
+6ã€æ·»åŠ å¯¹ymPromptå¯¹è¯æ¡†çš„æ”¯æŒï¼›
+7ã€æ·»åŠ å¯¹Alert,Confirmå¯¹è¯æ¡†çš„æ”¯æŒï¼›
+8ã€å¢žåŠ å¯¹ä¸­æ–‡è¾“å…¥çš„æ”¯æŒï¼›
+9ã€ä»Žç®€åŒ–ç”¨æˆ·æ“ä½œè€ƒè™‘ï¼Œåˆå¹¶TypeTextå’ŒAppendText
+10ã€å¢žåŠ ActionHightæŽ¥å£ï¼›

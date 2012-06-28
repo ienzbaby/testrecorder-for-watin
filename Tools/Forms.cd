@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TestRecorder.Tools.RunnerMachine">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <Members>
+      <Field Name="BreakpointSleep" Hidden="true" />
+      <Field Name="Current" Hidden="true" />
+      <Field Name="CurrentAction" Hidden="true" />
+      <Field Name="currentList" Hidden="true" />
+      <Method Name="RunInnerTest" Hidden="true" />
+      <Method Name="RunTestInstance" Hidden="true" />
+      <Field Name="SingleStep" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AQAICACQAIAABAAAAwCAEAAMQAJEAAAJcAACEQAAAAI=</HashCode>
+      <FileName>Tools\RunnerMachine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestRecorder.Tools.ScriptManager">
+    <Position X="4" Y="0.5" Width="3" />
+    <Members>
+      <Method Name="AddAction" Hidden="true" />
+      <Method Name="AssemblyAlreadyInList" Hidden="true" />
+      <Field Name="BlnFileDialogFound" Hidden="true" />
+      <Field Name="FileActiveElement" Hidden="true" />
+      <Method Name="FileDialogFound" Hidden="true" />
+      <Field Name="FileElementBrowser" Hidden="true" />
+      <Method Name="GetActionContext" Hidden="true" />
+      <Method Name="GetCodeFile" Hidden="true" />
+      <Method Name="GetElementAttr" Hidden="true" />
+      <Method Name="GetValueOfElement" Hidden="true" />
+      <Method Name="GetValueOfLast" Hidden="true" />
+      <Method Name="InsertAction" Hidden="true" />
+      <Field Name="lastTypeHashCode" Hidden="true" />
+      <Field Name="lastTypeValue" Hidden="true" />
+      <Method Name="LoadActionList" Hidden="true" />
+      <Method Name="RunScriptOutput" Hidden="true" />
+      <Field Name="sbKeys" Hidden="true" />
+      <Field Name="TimerFileDialog" Hidden="true" />
+      <Field Name="WaitTimer" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Struct Name="TestRecorder.Tools.ScriptManager.RECT" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Tools\ScriptManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Struct Name="TestRecorder.Tools.ScriptManager.WINDOWINFO" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Tools\ScriptManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>xBAAIEIigAQAhEBQABAwaIFCGQIKAAYSsgBUqBEmCAI=</HashCode>
+      <FileName>Tools\ScriptManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
