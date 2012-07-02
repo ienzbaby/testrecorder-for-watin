@@ -62,6 +62,7 @@ namespace XD.QQ.Tests
             JavaScriptObject root = new JavaScriptObject();
             root.Add("mod","uin");
             root.Add("act", "getlist");
+            root.Add("pageindex", "10");
             string request = JavaScriptConvert.SerializeObject(root);
             string ret = JsonServices.ProcessRequest(request);
             Console.WriteLine(ret);

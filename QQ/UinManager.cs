@@ -94,8 +94,10 @@ delete QQ_Uin_Cache where Id between @min and @max
             }
             return new List<string>();
         }
-        private string SQL_PAGE = @"declare @id bigint
+        private string SQL_PAGE = @"
+declare @id bigint
 select @id=max(id) from (select top {0} id from QQ_Uin order by id asc)xx
+if(@id is null) set @id=0
 select * from QQ_uin where id in( select top {1} Id from QQ_Uin where id>@id)";
         /// <summary>
         /// 取得分页数据

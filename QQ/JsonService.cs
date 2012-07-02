@@ -105,7 +105,7 @@ namespace XD.QQ
                     string where = "1=1 and name!=''";
                     long id = GetSecurityParam(context, "id", 0);
                     long pagesize = GetSecurityParam(context, "pagesize", 10);
-                    long pageindex = GetSecurityParam(context, "pagesize", 1);
+                    long pageindex = GetSecurityParam(context, "pageindex", 1);
 
                     if (id > 0) where += string.Format(" and Id='{0}'", id);
                     
