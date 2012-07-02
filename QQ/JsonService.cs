@@ -103,9 +103,13 @@ namespace XD.QQ
                 else if (act == "getlist")
                 {
                     string where = "1=1 and name!=''";
-                    string id = GetSecurityParam(context, "id", "");
-                    if (id.Length > 0) where += string.Format(" and Id='{0}'", id);
-                    DataTable dt = uin.GetRecordByRowNumber(50, 1, where).Tables[0];
+                    long id = GetSecurityParam(context, "id", 0);
+                    long pagesize = GetSecurityParam(context, "pagesize", 10);
+                    long pageindex = GetSecurityParam(context, "pagesize", 1);
+
+                    if (id > 0) where += string.Format(" and Id='{0}'", id);
+                    
+                    DataTable dt = uin.GetRecordByRowNumber(pagesize, pageindex, where).Tables[0];
 
                     JavaScriptObject root = new JavaScriptObject();
                     root.Add("errno", "0");
@@ -116,6 +120,19 @@ namespace XD.QQ
             else
                 throw new NotImplementedException(string.Format("没有实现的接口[mod='{0}']", mod));
             context.Response.End();
+        }
+        /// <summary>
+        /// 长整形支持,自动安全过滤
+        /// </summary>
+        /// <param name="context">HttpContext 对象</param>
+        /// <param name="key">名称</param>
+        /// <param name="value">默认值</param>
+        /// <returns></returns>
+        internal static long GetSecurityParam(HttpContext context, string key, long value)
+        {
+            long convert = 0;
+            bool sucess = long.TryParse(GetSecurityParam(context, key, "", true), out convert);
+            return sucess ? convert : value;
         }
         /// <summary>
         /// 自定义处理

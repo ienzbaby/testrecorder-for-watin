@@ -17,12 +17,7 @@ namespace XD.QQ
         private IDataService dal = DataFactory.Instance();
         private ILog log = null;
         private long LockNum = 0;
-        private readonly string SQL_UNUSED = @"
-declare @max bigint declare @min bigint
-select @max=max(id),@min=min(id) from( select top 20 * from QQ_Uin_Cache)sss
-select Id from QQ_Uin_Cache where Id between @min and @max
-delete QQ_Uin_Cache where Id between @min and @max
-";
+        
         private readonly string SQL_INSERT = @"
 declare @max bigint declare @min bigint
 select @min=min(id),@max=max(id) from 
@@ -53,7 +48,12 @@ select count(*) as cnt from QQ_Uin_Cache";
             DataTable dt = dal.ExecuteSql("sp_spaceused [qq_uin]").Tables[0];
             return int.Parse(dt.Rows[0]["rows"].ToString());
         }
-        
+        private readonly string SQL_UNUSED = @"
+declare @max bigint declare @min bigint
+select @max=max(id),@min=min(id) from( select top 20 * from QQ_Uin_Cache)sss
+select Id from QQ_Uin_Cache where Id between @min and @max
+delete QQ_Uin_Cache where Id between @min and @max
+";
         /// <summary>
         /// 取得未使用的Actor的Uin
         /// </summary>
@@ -94,6 +94,9 @@ select count(*) as cnt from QQ_Uin_Cache";
             }
             return new List<string>();
         }
+        private string SQL_PAGE = @"declare @id bigint
+select @id=max(id) from (select top {0} id from QQ_Uin order by id asc)xx
+select * from QQ_uin where id in( select top {1} Id from QQ_Uin where id>@id)";
         /// <summary>
         /// 取得分页数据
         /// </summary>
@@ -102,9 +105,10 @@ select count(*) as cnt from QQ_Uin_Cache";
         /// <param name="strOrder"></param>
         /// <param name="strWhere"></param>
         /// <returns></returns>
-        public DataSet GetRecordByRowNumber(int pageSize, int pageIndex,string strWhere)
+        public DataSet GetRecordByRowNumber(long pageSize, long pageIndex, string strWhere)
         {
-            return DataFactory.ExecuteSql("select top "+pageSize+" * from QQ_Uin");
+            string sql = string.Format(SQL_PAGE, (pageIndex - 1) * pageSize, pageSize);
+            return DataFactory.ExecuteSql(sql);
         }
     }
 }

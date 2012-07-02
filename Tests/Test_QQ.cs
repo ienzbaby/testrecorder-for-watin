@@ -57,15 +57,14 @@ namespace XD.QQ.Tests
             Console.WriteLine(list.Count);
         }
         [Test]
-        public void Exist()
+        public void GetList()
         {
-            Console.WriteLine(int.MaxValue);
-            Console.WriteLine(int.MaxValue / 100);
-
-            Console.WriteLine("----------------------------");
-
-            Console.WriteLine(long.MaxValue);
-            Console.WriteLine(long.MaxValue / 100);
+            JavaScriptObject root = new JavaScriptObject();
+            root.Add("mod","uin");
+            root.Add("act", "getlist");
+            string request = JavaScriptConvert.SerializeObject(root);
+            string ret = JsonServices.ProcessRequest(request);
+            Console.WriteLine(ret);
         }
     }
 }
