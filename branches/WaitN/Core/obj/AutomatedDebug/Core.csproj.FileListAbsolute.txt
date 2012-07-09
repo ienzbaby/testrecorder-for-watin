@@ -1,7 +1,0 @@
-D:\程序备份\ZQ_WaitN\WaitN\Core\bin\WatiN.Core.dll
-D:\程序备份\ZQ_WaitN\WaitN\Core\bin\WatiN.Core.pdb
-D:\程序备份\ZQ_WaitN\WaitN\Core\obj\AutomatedDebug\ResolveAssemblyReference.cache
-D:\程序备份\ZQ_WaitN\WaitN\Core\obj\AutomatedDebug\WatiN.Core.Properties.Resources.resources
-D:\程序备份\ZQ_WaitN\WaitN\Core\obj\AutomatedDebug\Core.csproj.GenerateResource.Cache
-D:\程序备份\ZQ_WaitN\WaitN\Core\obj\AutomatedDebug\WatiN.Core.dll
-D:\程序备份\ZQ_WaitN\WaitN\Core\obj\AutomatedDebug\WatiN.Core.pdb
