@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Twitter Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- Le styles -->
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <link href="../css/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="../css/docs.css" rel="stylesheet" />
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5.js"></script>
+    <![endif]-->
+    <!-- Le fav and touch icons -->
+     <style type="text/css">
+         .matrix{ width:300px;}
+         .matrix tr{ height:100px; }
+         .matrix td{ height:100px; width:150px; text-align:center; vertical-align:middle;}
+     </style>
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+    <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">
+                    </span>
+                </button>
+                <a class="brand" href="#">Bootstrap</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li class="active"><a href="First.html">Baseic Models of Conflict and Cooperation</a>
+                        </li>
+                        <li class=""><a href="#">Bargaining With First Strike Advantages</a></li>
+                        <li class="divider-vertical"></li>
+                        <li class=""><a href="#">Comparative Advantage</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- Masthead-->
+        <div class="page-header">
+            <h1>
+                Prisoner's Dilemma</h1>
+        </div>
+        <h3 style="font-size: medium">
+        How would you decide whether to build arms or not in such a situation?  Put yourself in the position of State A.  Do you build or not?  Make your choice and we’ll tell you what happens based on what you and State B decide to do.    
+        </h3>
+        <br />
+        <div class="row">
+            <div class="span4 offset2">
+                <table class="table table-striped table-bordered matrix">
+                    <tbody>
+                        <tr>
+                            <td>
+                                Build when the other doesn’t
+                            </td>
+                            <td>
+                                Don't build when the other doesn’t
+                            </td>
+                        </tr>
+                        <tr >
+                            <td>
+                                Build when the other does
+                            </td>
+                            <td>
+                                Don’t build when the other does
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                &nbsp;
+            </div>     
+             <div class="span4">
+                 <div id="divBuild" class="alert alert-block hide">
+                      <button class="close" data-dismiss="alert">×</button>
+                      <strong>Warning!</strong>State B decides to build arms too!  Both of you arm but end up in the same relative security position.  Both of you achieve your third best option.  Too bad you couldn’t both agree not to build arms – then both of you would achieve your second most preferred outcome
+                 </div>
+                 <div id="divSave" class="alert alert-success hide">
+                      <button class="close" data-dismiss="alert">×</button>
+                      <strong>success!</strong>You use your resources elsewhere and hope that State B will do the same.  Eventually, however, you come to know that State B has built arms in spite of its claims that it would not do so.  This is a disaster as you achieve your least preferred outcome!
+                 </div>
+             </div>
+        </div>
+        <header id="head1" class="jumbotron masthead">
+            <p class="download-info">
+              <a href="#" id="btnBuild" class="btn btn-large  btn-primary" >Build Arms</a>
+              <a href="#" id="btnSave" class="btn btn-large">Save Money</a>
+              <a href="#" id="btnTry" class="btn btn-large  btn-primary hide">Try Again</a>
+            </p>
+        </header>
+        <header id="head2" class="jumbotron masthead hide">
+            <p class="download-info">
+              Would you like to try again  
+              <a href="#" id="btnYes" class="btn btn-large  btn-primary" >Yes</a>
+              <a href="First.html" id="btnNo" class="btn btn-large">No</a>
+            </p>
+        </header>
+        <!-- <hr class="soften">-->
+        <!-- /.marketing -->
+        <!-- Footer-->
+        <footer class="footer">
+        <p class="pull-right">
+            <a href="#">Back to top</a>
+        </p>
+        <p>Icons from <a href="#">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+   </footer>
+    </div>
+    <!-- /container -->
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" language="javascript">
+        $("#btnBuild").click(function(e) {
+            $("#divBuild").show(); $("#head1,#head2").toggle(); 
+        });
+        $("#btnSave").click(function(e) {
+            $("#divSave").show(); $("#head1,#head2").toggle(); 
+        });
+        $("#btnYes").click(function(e) {
+            $("#head1,#head2").toggle();
+            $("#divBuild").hide();
+            $("#divSave").hide();
+        });
+    </script>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Analytics-->
+</body>
+</html>
