@@ -92,18 +92,14 @@
                                 </tbody>
                             </table>
             </div>
-            <div class="span4">
-                <div id="divBuild" class="alert alert-block hide">
-                    <button class="close" data-dismiss="alert">
-                        ×</button>
+            <div class="span6">
+                <div id="divBuild" class="alert alert-error hide">
                     <strong>Warning!</strong>State B decides to build arms too! Both of you arm but
                     end up in the same relative security position. Both of you achieve your third best
                     option. Too bad you couldn’t both agree not to build arms – then both of you would
                     achieve your second most preferred outcome
                 </div>
-                <div id="divSave" class="alert alert-success hide">
-                    <button class="close" data-dismiss="alert">
-                        ×</button>
+                <div id="divSave" class="alert alert-error hide">
                     <strong>danger!</strong>You use your resources elsewhere and hope that State B
                     will do the same. Eventually, however, you come to know that State B has built arms
                     in spite of its claims that it would not do so. This is a disaster as you achieve
@@ -179,7 +175,7 @@
             for (var i = x1; i <= x2; i++) {
                 x = i;
                 y = (y2 - y1) / (x2 - x1) * (x - x1) + y1;
-                tmp += "<img border='0' style='position:absolute;left:" + (x + left-1) + "px;top:" + (y +top-1) + "px;background-color:" + color + "' src='#' width='1px' height='1px'>";
+                tmp += "<img border='0' style='position:absolute;left:" + (x + left-2) + "px;top:" + (y +top-2) + "px;background-color:" + color + "' src='#' width='1px' height='1px'>";
             }
            $("#"+objid).append(tmp);
         }
