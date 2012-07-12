@@ -10,6 +10,7 @@
     <link href="../css/bootstrap.css" rel="stylesheet" />
     <link href="../css/bootstrap-responsive.css" rel="stylesheet" />
     <link href="../css/docs.css" rel="stylesheet" />
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="js/html5.js"></script>
@@ -42,27 +43,32 @@
     <div class="container">
         <!-- Masthead-->
         <div class="page-header">
-            <h1>
-                Prisoner's Dilemma</h1>
+            <h2>Prisoner's Dilemma</h2>
         </div>
-        <h3 style="font-size: medium">
-            The prisoner’s dilemma is a very well-known strategic game that can be used to think
-            about many situations in international politics. As one example, suppose two states
-            are considering whether or not to build arms and can’t immediately tell what decision
-            the other side has made. Each side has the following preferences over outcomes</h3>
-        <br />
         <div class="row">
-            <div class="span6">
-                <ol>
-                    <li>Most preferred: Build when the other doesn’t</li>
-                    <li>2nd most preferred: Don't build when the other doesn’t</li>
-                    <li>3rd most preferred: Build when the other does</li>
-                    <li>Least preferred: Don't build when the other does</li>
-                </ol>
+            <div class="span8">
+                <h3>
+                    The prisoner’s dilemma is a very well-known strategic game 
+                </h3>
+                <p>
+                    It can be used to think about many situations in international politics.
+                    As one example, suppose two states are considering whether or not to build arms
+                    and can’t immediately tell what decision the other side has made. Each side has
+                    the following preferences over outcomes
+                </p>
             </div>
         </div>
         <div class="row">
+            <div class="span10">
+                <div>Most preferred: Build when the other doesn’t</div>
+                <div>2nd most preferred: Don't build when the other doesn’t</div>
+                <div>3rd most preferred: Build when the other does</div>
+                <p>Least preferred: Don't build when the other does</p>
+            </div>
+        </div>
+        <div  id="divMatrix" class="row">
             <div class="span6">
+                <h3>The Corresponding 2*2 Matrix</h3>
                 <table class=" matrix">
                     <tbody>
                         <tr>
@@ -76,7 +82,7 @@
                                 Build Arms
                             </td>
                             <td class="title">
-                               Save Money
+                                Save Money
                             </td>
                         </tr>
                         <tr>
@@ -106,30 +112,24 @@
                 &nbsp;
             </div>
         </div>
-        <header class="jumbotron masthead">
-              <a href="#" id="btnMatrix" class="btn btn-medium  btn-primary ">see the corresponding 2*2.</a>
-              <a href="Third.html" class="btn btn-medium">Ready to make a decision</a>
-            
-        </header>
+        <div class="row">
+            <div class="span6">
+              <a href="#" id="btnMatrix" class="btn btn-small">see the corresponding 2*2.</a>
+              <a href="Third.html" class="btn btn-small">Ready to make a decision</a>
+            </div>
+        </div>
         <!-- <hr class="soften">-->
         <!-- /.marketing -->
         <!-- Footer-->
-        <footer class="footer">
-        <p class="pull-right">
-            <a href="#">Back to top</a>
-        </p>
-        <p>Icons from <a href="#">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-   </footer>
+        <footer class="footer" id="footer"></footer>
+        <script type="text/javascript">$("#footer").load("Foot.html");</script>
     </div>
     <!-- /container -->
-
-    <script type="text/javascript" src="../js/jquery.min.js"></script>
-
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
 
     <script type="text/javascript" language="javascript">
         $("#btnMatrix").click(function(e) {
-            $('.matrix').toggle();
+            $('#divMatrix').toggle();
             e.preventDefault();
         });
 
