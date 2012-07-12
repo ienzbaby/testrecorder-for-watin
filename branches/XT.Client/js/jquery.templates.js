@@ -14,3 +14,19 @@ jQuery.fn.extend({
         $(this).setTemplate(tpl).processTemplate(data);
     }
 });
+
+function tLine(objid, color) {
+    var obj = document.getElementById(objid);
+    var x1 = obj.offsetLeft, y1 = obj.offsetTop, x2 = obj.offsetLeft + obj.offsetWidth, y2 = obj.offsetTop + obj.offsetHeight;
+    tmp = "";
+
+    var left = $("#" + objid).position().left;
+    var top = $("#" + objid).position().top;
+
+    for (var i = x1; i <= x2; i++) {
+        x = i;
+        y = (y2 - y1) / (x2 - x1) * (x - x1) + y1;
+        tmp += "<img border='0' style='position:absolute;left:" + (x + left - 2) + "px;top:" + (y + top - 2) + "px;background-color:" + color + "' src='#' width='1px' height='1px'>";
+    }
+    $("#" + objid).append(tmp);
+};
