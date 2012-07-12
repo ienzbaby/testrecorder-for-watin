@@ -29,3 +29,61 @@ function tLine(objid, color) {
     }
     $("#" + objid).append(tmp);
 };
+
+function Coming(obj) {
+    alert('New Levels Coming Soon!');
+}
+var Pages=
+[
+    {
+        "title": "Prisoner's Dilemma",
+        "op1": "Build Arms",
+        "op2": "Save Money",
+        "p2": {
+            "h1": "The prisoner’s dilemma is a very well-known strategic game",
+            "desc1": "It can be used to think about many situations in international politics. As one example, suppose two states are considering whether or not to build arms and can’t immediately tell what decision the other side has made. Each side has the following preferences over outcomes",
+            "list1": "Most preferred: Build when the other doesn’t",
+            "list2": "2nd most preferred: Don't build when the other doesn’t",
+            "list3": "3rd most preferred: Build when the other does",
+            "list4": "Least preferred: Don't build when the other does",
+            "h2": "The Corresponding 2*2 Matrix",
+            "btn1": "See the corresponding 2*2",
+            "btn2": "Ready to make a decision"
+        },
+        "p3": {
+            "h1": "How would you decide whether to build arms or not in such a situation?",
+            "desc1": "Put yourself in the position of State A. Make your choice and we’ll tell you what happens based on what you and State B decide to do.",
+            "msg1": "Warning!  State B decides to build arms too!",
+            "content1": "Both of you arm but end up in the same relative security position. Both of you achieve your third best option. Too bad you couldn’t both agree not to build arms – then both of you would achieve your second most preferred outcome",
+            "msg2": "danger!  You use your resources elsewhere and hope that State B willdo the same.",
+            "content2": "Eventually, however, you come to know that State B has built arms in spite of its claims that it would not do so. This is a disaster as you achieve your least preferred outcome!"
+        }
+    },
+    {
+        "title": "Stag Hunt",
+        "op1": "Cooprate",
+        "op2": "Don't Cooperate",
+        "p2": {
+            "h1": "The stag hunt is a strategic situation discussed in works Jean-Jacques Rousseau and several international relations theorists",
+            "desc1": "In Rousseau’s discussion, hunters need to decide between cooperating with each other to hunt a stag and striking out alone to trap a hare.  Some scholars of international relations have argued that states can find themselves making similar sorts of decisions.",
+            "list1": "Most preferred: Cooperate when the other state cooperates",
+            "list2": "2nd most preferred: Don’t cooperate when the other state does",
+            "list3": "3rd most preferred: Don’t cooperate when the other state doesn’t cooperate",
+            "list4": "Least preferred: Cooperate when the other state doesn’t cooperate",
+            "h2": "The Corresponding 2*2 Matrix",
+            "btn1": "See the corresponding 2*2",
+            "btn2": "Ready to make a decision"
+        },
+        "p3": {
+            "h1": "How would you decide whether to build arms or not in such a situation?",
+            "desc1": "Put yourself in the position of State A. Make your choice and we’ll tell you what happens based on what you and State B decide to do.",
+            "msg1": "Warning!  Neither of you cooperate.",
+            "content1": "Both of you arm but end up in the same relative security position. Both of you achieve your third best option. Too bad you couldn’t both agree not to build arms – then both of you would achieve your second most preferred outcome",
+            "msg2": "danger!  The other state didn’t trust you",
+            "content2": "Neither of you cooperate.  There seems to be a trust issue that both sides expected.  You achieve your third most preferred outcome – but it’s not clear you could have done any better."
+        }
+    },
+    {
+        "title": "The Game Of Chicken"
+    }
+];
