@@ -52,8 +52,8 @@
    <div class="navbar"><div class="navbar-inner3">&nbsp;</div></div>   
    
    <div class="container" id="divBody"><!--
-        <div class="page-header">
-            <h2>{$T.title}</h2>
+         <div class="row">
+            <div class="span6"><h2>{$T.title}</h2></div>
         </div>
         <div class="row">
             <div class="span8">
@@ -63,6 +63,7 @@
         </div>
         <div class="row">
             <div class="span6">
+                <br/>
                 <table class=" matrix">
                     <tbody>
                         <tr>
@@ -91,8 +92,9 @@
             <div class="span8">
                 <br />
                 <div id="divBuild" class="hide">
-                    <div class="alert alert-warn"><strong>Warning!&nbsp;&nbsp;</strong>{$T.p3.msg1}</div>
-                    <p>{$T.p3.content1}</p>
+                    <div class="alert alert-warn"><strong>Warning!&nbsp;&nbsp;</strong>{$T.p3.msg1}
+                        <p>{$T.p3.content1}</p>
+                    </div>
                 </div>
                 <div id="divSave" class="hide">
                     <div class="alert alert-warn"><strong>danger!&nbsp;&nbsp;</strong>{$T.p3.msg2}</div>
@@ -102,10 +104,10 @@
         </div>
         <div class="row">
             <div id="divRetry" class="span8 hide">
-                <h3>
+                <h4>
                     Would you like to try again ? <a href="#" id="btnYes" class="btn btn-small">&nbsp;&nbsp;&nbsp;Yes&nbsp;&nbsp;&nbsp;</a>
                     <a href="First.html" id="btnNo" class="btn btn-small">&nbsp;&nbsp;&nbsp;No&nbsp;&nbsp;&nbsp;</a>
-                </h3>
+                </h4>
             </div>
         </div>
         <footer class="footer" id="footer"></footer>

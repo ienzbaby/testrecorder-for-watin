@@ -53,9 +53,9 @@ var Pages=
         "p3": {
             "h1": "How would you decide whether to build arms or not in such a situation?",
             "desc1": "Put yourself in the position of State A. Make your choice and we’ll tell you what happens based on what you and State B decide to do.",
-            "msg1": "Warning!  State B decides to build arms too!",
+            "msg1": "State B decides to build arms too!",
             "content1": "Both of you arm but end up in the same relative security position. Both of you achieve your third best option. Too bad you couldn’t both agree not to build arms – then both of you would achieve your second most preferred outcome",
-            "msg2": "danger!  You use your resources elsewhere and hope that State B willdo the same.",
+            "msg2": "You use your resources elsewhere and hope that State B willdo the same.",
             "content2": "Eventually, however, you come to know that State B has built arms in spite of its claims that it would not do so. This is a disaster as you achieve your least preferred outcome!"
         }
     },
@@ -77,9 +77,9 @@ var Pages=
         "p3": {
             "h1": "How would you decide whether to build arms or not in such a situation?",
             "desc1": "Put yourself in the position of State A. Make your choice and we’ll tell you what happens based on what you and State B decide to do.",
-            "msg1": "Warning!  Neither of you cooperate.",
+            "msg1": "Neither of you cooperate.",
             "content1": "Both of you arm but end up in the same relative security position. Both of you achieve your third best option. Too bad you couldn’t both agree not to build arms – then both of you would achieve your second most preferred outcome",
-            "msg2": "danger!  The other state didn’t trust you",
+            "msg2": "The other state didn’t trust you",
             "content2": "Neither of you cooperate.  There seems to be a trust issue that both sides expected.  You achieve your third most preferred outcome – but it’s not clear you could have done any better."
         }
     },
