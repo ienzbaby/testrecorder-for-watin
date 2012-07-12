@@ -47,16 +47,14 @@ var Pages=
             "list3": "3rd most preferred: Build when the other does",
             "list4": "Least preferred: Don't build when the other does",
             "h2": "The Corresponding 2*2 Matrix",
-            "btn1": "See the corresponding 2*2",
+            "btn1": "Show/Hide the corresponding 2*2",
             "btn2": "Ready to make a decision"
         },
         "p3": {
             "h1": "How would you decide whether to build arms or not in such a situation?",
             "desc1": "Put yourself in the position of State A. Make your choice and we’ll tell you what happens based on what you and State B decide to do.",
-            "msg1": "State B decides to build arms too!",
-            "content1": "Both of you arm but end up in the same relative security position. Both of you achieve your third best option. Too bad you couldn’t both agree not to build arms – then both of you would achieve your second most preferred outcome",
-            "msg2": "You use your resources elsewhere and hope that State B willdo the same.",
-            "content2": "Eventually, however, you come to know that State B has built arms in spite of its claims that it would not do so. This is a disaster as you achieve your least preferred outcome!"
+            "msg1": "State B decides to build arms too!Both of you arm but end up in the same relative security position. Both of you achieve your third best option. Too bad you couldn’t both agree not to build arms – then both of you would achieve your second most preferred outcome",
+            "msg2": "You use your resources elsewhere and hope that State B willdo the same.Eventually, however, you come to know that State B has built arms in spite of its claims that it would not do so. This is a disaster as you achieve your least preferred outcome!"
         }
     },
     {
