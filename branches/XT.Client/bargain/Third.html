@@ -45,76 +45,92 @@
             <h1>
                 Prisoner's Dilemma</h1>
         </div>
-        <h3 style="font-size: medium">
-            How would you decide whether to build arms or not in such a situation? 
-            Put yourself in the position of State A. 
-            Make your choice and we’ll tell you what happens based on what you and State B decide to do.
-        </h3>
-        <br />
+        <div class="row">
+            <div class="span10">
+                <h3>
+                    How would you decide whether to build arms or not in such a situation?
+                </h3>
+                <p>
+                    Put yourself in the position of State A. Make your choice and we’ll tell you what
+                    happens based on what you and State B decide to do.
+                </p>
+            </div>
+        </div>
         <div class="row">
             <div class="span6">
-                  <table class=" matrix">
-                                <tbody>
-                                    <tr>
-                                        <td id="td1">
-                                            <div class="titleA">State B</div>
-                                            <div class="titleB">State A</div>
-                                        </td>
-                                        <td class="title">
-                                           <a href="#" class="btn btn-small disabled" >Build Arms</a>
-                                        </td>
-                                        <td class="title">
-                                            <a href="#" class="btn btn-small disabled">Save Money</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="title">
-                                           <a href="#" class="btn btn-small" id="btnBuild">Build Arms</a>
-                                        </td>
-                                        <td class="square">
-                                            3rd most preferred
-                                        </td>
-                                        <td class="square">
-                                            Most preferred
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="title">
-                                           <a href="#" class="btn btn-small"  id="btnSave">Save Money</a>
-                                        </td>
-                                        <td class="square" id="td12">
-                                            Least preferred
-                                        </td>
-                                        <td class="square">
-                                            2nd most preferred
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                <table class=" matrix">
+                    <tbody>
+                        <tr>
+                            <td id="td1">
+                                <div class="titleA">
+                                    State B</div>
+                                <div class="titleB">
+                                    State A</div>
+                            </td>
+                            <td class="title">
+                                <a href="#" class="btn btn-small disabled">Build Arms</a>
+                            </td>
+                            <td class="title">
+                                <a href="#" class="btn btn-small disabled">Save Money</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="title">
+                                <a href="#" class="btn btn-small" id="btnBuild">Build Arms</a>
+                            </td>
+                            <td class="square">
+                                3rd most preferred
+                            </td>
+                            <td class="square">
+                                Most preferred
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="title">
+                                <a href="#" class="btn btn-small" id="btnSave">Save Money</a>
+                            </td>
+                            <td class="square" id="td12">
+                                Least preferred
+                            </td>
+                            <td class="square">
+                                2nd most preferred
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="span6">
-                <div id="divBuild" class="alert alert-error hide">
-                    <strong>Warning!</strong>State B decides to build arms too! Both of you arm but
-                    end up in the same relative security position. Both of you achieve your third best
-                    option. Too bad you couldn’t both agree not to build arms – then both of you would
-                    achieve your second most preferred outcome
+        </div>
+        <div class="row">
+            <div class="span10">
+                <br />
+                <div id="divBuild"  class="hide">
+                    <div class="alert alert-warn">
+                        <strong>Warning!&nbsp;&nbsp;</strong>State B decides to build arms too! 
+                    </div>
+                    <p>
+                         Both of you arm but end up in the same relative security position. Both of you achieve your third best
+                        option. Too bad you couldn’t both agree not to build arms – then both of you would
+                        achieve your second most preferred outcome
+                    </p>
                 </div>
-                <div id="divSave" class="alert alert-error hide">
-                    <strong>danger!</strong>You use your resources elsewhere and hope that State B
-                    will do the same. Eventually, however, you come to know that State B has built arms
-                    in spite of its claims that it would not do so. This is a disaster as you achieve
-                    your least preferred outcome!
+                <div id="divSave"  class="hide">
+                    <div class="alert alert-warn">
+                        <strong>danger!&nbsp;&nbsp;</strong>You use your resources elsewhere and hope that 
+                        State B willdo the same. 
+                    </div>
+                    Eventually, however, you come to know that State B has built arms in spite of its claims that 
+                    it would not do so. This is a disaster as you achieve your least preferred outcome!
                 </div>
             </div>
         </div>
-        <div id="divImg">
+        <div class="row">
+            <div id="divRetry" class="span10 hide">
+                 <h3>Would you like to try again ?
+                 <a href="#" id="btnYes" class="btn btn-small" >&nbsp;&nbsp;&nbsp;Yes&nbsp;&nbsp;&nbsp;</a>
+                 <a href="First.html" id="btnNo" class="btn btn-small">&nbsp;&nbsp;&nbsp;No&nbsp;&nbsp;&nbsp;</a>
+                 </h3>
+           </div>
         </div>
-        <header id="head2" class="jumbotron masthead hide">
-              <p style="text-align:left">Would you like to try again ?
-                  <a href="#" id="btnYes" class="btn btn-medium" >&nbsp;&nbsp;&nbsp;Yes&nbsp;&nbsp;&nbsp;</a>
-                  <a href="First.html" id="btnNo" class="btn btn-medium">&nbsp;&nbsp;&nbsp;No&nbsp;&nbsp;&nbsp;</a>
-              </p>
-        </header>
         <!-- <hr class="soften">-->
         <!-- /.marketing -->
         <!-- Footer-->
@@ -128,19 +144,20 @@
     <!-- /container -->
 
     <script type="text/javascript" src="../js/jquery.min.js"></script>
+
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
         $("#btnBuild").click(function(e) {
             if ($(this).hasClass("disabled") == true) return;
-            
+
             $("table .btn").addClass("disabled");
             $(this).addClass("btn-success");
             $("table tr:eq(0) .btn:eq(0)").addClass("btn-success");
             $("table tr:eq(1) td:eq(1)").addClass("selected");
 
-            $("#divBuild").show(); 
-            $("#head1,#head2").toggle();
+            $("#divBuild").show();
+            $("#divRetry").toggle();
         });
         $("#btnSave").click(function(e) {
             if ($(this).hasClass("disabled") == true) return;
@@ -150,17 +167,17 @@
             $("table tr:eq(0) .btn:eq(0)").addClass("btn-success");
             $("table tr:eq(2) td:eq(1)").addClass("selected");
 
-            $("#divSave").show(); 
-            $("#head1,#head2").toggle();
+            $("#divSave").show();
+            $("#divRetry").toggle();
         });
         $("#btnYes").click(function(e) {
             $("table .btn").removeClass("disabled");
             $("table .btn").removeClass("btn-success");
             $("table tr:eq(0) .btn").addClass("disabled");
-            
+
             $("table td").removeClass("selected");
-            $("#head1,#head2").toggle();
-            $("#divBuild,#divSave").hide(); 
+            $("#divRetry").toggle();
+            $("#divBuild,#divSave").hide();
         });
 
 
@@ -169,15 +186,15 @@
             var x1 = obj.offsetLeft, y1 = obj.offsetTop, x2 = obj.offsetLeft + obj.offsetWidth, y2 = obj.offsetTop + obj.offsetHeight;
             tmp = "";
 
-            var left = $("#"+objid).position().left;
+            var left = $("#" + objid).position().left;
             var top = $("#" + objid).position().top;
-            
+
             for (var i = x1; i <= x2; i++) {
                 x = i;
                 y = (y2 - y1) / (x2 - x1) * (x - x1) + y1;
-                tmp += "<img border='0' style='position:absolute;left:" + (x + left-2) + "px;top:" + (y +top-2) + "px;background-color:" + color + "' src='#' width='1px' height='1px'>";
+                tmp += "<img border='0' style='position:absolute;left:" + (x + left - 2) + "px;top:" + (y + top - 2) + "px;background-color:" + color + "' src='#' width='1px' height='1px'>";
             }
-           $("#"+objid).append(tmp);
+            $("#" + objid).append(tmp);
         }
         tLine("td1", "#DDD");
     </script>
