@@ -51,21 +51,14 @@
    </div>
    <div class="navbar"><div class="navbar-inner3">&nbsp;</div></div>   
    
-   <div class="container">
-        <!-- Masthead-->
+   <div class="container" id="divBody"><!--
         <div class="page-header">
-            <h2>
-                Prisoner's Dilemma</h2>
+            <h2>{$T.title}</h2>
         </div>
         <div class="row">
             <div class="span8">
-                <h3>
-                    How would you decide whether to build arms or not in such a situation?
-                </h3>
-                <p>
-                    Put yourself in the position of State A. Make your choice and we’ll tell you what
-                    happens based on what you and State B decide to do.
-                </p>
+                <h3>{$T.p3.h1}</h3>
+                <p>{$T.p3.desc1}</p>
             </div>
         </div>
         <div class="row">
@@ -74,39 +67,21 @@
                     <tbody>
                         <tr>
                             <td id="td1">
-                                <div class="titleA">
-                                    State B</div>
-                                <div class="titleB">
-                                    State A</div>
+                                <div class="titleA">State B</div>
+                                <div class="titleB">State A</div>
                             </td>
-                            <td class="title">
-                                <a href="#" class="btn btn-small disabled">Build Arms</a>
-                            </td>
-                            <td class="title">
-                                <a href="#" class="btn btn-small disabled">Save Money</a>
-                            </td>
+                            <td class="title"><a href="#" class="btn btn-small disabled">{$T.op1}</a></td>
+                            <td class="title"><a href="#" class="btn btn-small disabled">{$T.op2}</a></td>
                         </tr>
                         <tr>
-                            <td class="title">
-                                <a href="#" class="btn btn-small" id="btnBuild">Build Arms</a>
-                            </td>
-                            <td class="square">
-                                3rd most preferred
-                            </td>
-                            <td class="square">
-                                Most preferred
-                            </td>
+                            <td class="title"><a href="#" class="btn btn-small" id="btnBuild">{$T.op1}</a></td>
+                            <td class="square">3rd most preferred</td>
+                            <td class="square">Most preferred</td>
                         </tr>
                         <tr>
-                            <td class="title">
-                                <a href="#" class="btn btn-small" id="btnSave">Save Money</a>
-                            </td>
-                            <td class="square" id="td12">
-                                Least preferred
-                            </td>
-                            <td class="square">
-                                2nd most preferred
-                            </td>
+                            <td class="title"><a href="#" class="btn btn-small" id="btnSave">{$T.op2}</a></td>
+                            <td class="square">Least preferred</td>
+                            <td class="square">2nd most preferred</td>
                         </tr>
                     </tbody>
                 </table>
@@ -116,23 +91,12 @@
             <div class="span8">
                 <br />
                 <div id="divBuild" class="hide">
-                    <div class="alert alert-warn">
-                        <strong>Warning!&nbsp;&nbsp;</strong>State B decides to build arms too!
-                    </div>
-                    <p>
-                        Both of you arm but end up in the same relative security position. Both of you achieve
-                        your third best option. Too bad you couldn’t both agree not to build arms – then
-                        both of you would achieve your second most preferred outcome
-                    </p>
+                    <div class="alert alert-warn"><strong>Warning!&nbsp;&nbsp;</strong>{$T.p3.msg1}</div>
+                    <p>{$T.p3.content1}</p>
                 </div>
                 <div id="divSave" class="hide">
-                    <div class="alert alert-warn">
-                        <strong>danger!&nbsp;&nbsp;</strong>You use your resources elsewhere and hope that
-                        State B willdo the same.
-                    </div>
-                    Eventually, however, you come to know that State B has built arms in spite of its
-                    claims that it would not do so. This is a disaster as you achieve your least preferred
-                    outcome!
+                    <div class="alert alert-warn"><strong>danger!&nbsp;&nbsp;</strong>{$T.p3.msg2}</div>
+                    <p>{$T.p3.content2}</p>
                 </div>
             </div>
         </div>
@@ -144,53 +108,52 @@
                 </h3>
             </div>
         </div>
-        <!-- <hr class="soften">-->
-        <!-- /.marketing -->
-        <!-- Footer-->
         <footer class="footer" id="footer"></footer>
-
-        <script type="text/javascript">            $("#footer").load("Foot.html");</script>
-
+        <script type="text/javascript">$("#footer").load("Foot.html");</script>
+        -->
     </div>
     <!-- /container -->
 
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
-        $("#btnBuild").click(function(e) {
-            if ($(this).hasClass("disabled") == true) return;
+        function bindEvents() {
+            $("#btnBuild").click(function(e) {
+                if ($(this).hasClass("disabled") == true) return;
 
-            $("table .btn").addClass("disabled");
-            $(this).addClass("btn-success");
-            $("table tr:eq(0) .btn:eq(0)").addClass("btn-success");
-            $("table tr:eq(1) td:eq(1)").addClass("selected");
+                $("table .btn").addClass("disabled");
+                $(this).addClass("btn-success");
+                $("table tr:eq(0) .btn:eq(0)").addClass("btn-success");
+                $("table tr:eq(1) td:eq(1)").addClass("selected");
 
-            $("#divBuild").show();
-            $("#divRetry").toggle();
-        });
-        $("#btnSave").click(function(e) {
-            if ($(this).hasClass("disabled") == true) return;
+                $("#divBuild").show();
+                $("#divRetry").toggle();
+            });
+            $("#btnSave").click(function(e) {
+                if ($(this).hasClass("disabled") == true) return;
 
-            $("table .btn").addClass("disabled");
-            $(this).addClass("btn-success");
-            $("table tr:eq(0) .btn:eq(0)").addClass("btn-success");
-            $("table tr:eq(2) td:eq(1)").addClass("selected");
+                $("table .btn").addClass("disabled");
+                $(this).addClass("btn-success");
+                $("table tr:eq(0) .btn:eq(0)").addClass("btn-success");
+                $("table tr:eq(2) td:eq(1)").addClass("selected");
 
-            $("#divSave").show();
-            $("#divRetry").toggle();
-        });
-        $("#btnYes").click(function(e) {
-            $("table .btn").removeClass("disabled");
-            $("table .btn").removeClass("btn-success");
-            $("table tr:eq(0) .btn").addClass("disabled");
+                $("#divSave").show();
+                $("#divRetry").toggle();
+            });
+            $("#btnYes").click(function(e) {
+                $("table .btn").removeClass("disabled");
+                $("table .btn").removeClass("btn-success");
+                $("table tr:eq(0) .btn").addClass("disabled");
 
-            $("table td").removeClass("selected");
-            $("#divRetry").toggle();
-            $("#divBuild,#divSave").hide();
-        });
-
-        function init(){
+                $("table td").removeClass("selected");
+                $("#divRetry").toggle();
+                $("#divBuild,#divSave").hide();
+            });
+        }
+        function init() {
+            $("#divBody").processInnerTemplate(Pages[0]);
             tLine("td1", "#DDD");
+            bindEvents();
         };
         init();
     </script>

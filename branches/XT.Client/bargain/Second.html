@@ -39,7 +39,7 @@
                 <div class="controls">
                     <div class="input-prepend">
                         <span class="add-on"><i class="icon-search"></i></span>
-                        <input type="text" class="search-query" placeholder="Search">
+                        <input type="text" class="search-query" placeholder="Search"/>
                     </div>
                 </div>
                 </form>
@@ -48,72 +48,46 @@
     </div>
     <div class="navbar"><div class="navbar-inner3">&nbsp;</div></div>   
    
-    <div class="container">
-        <!-- Masthead-->
+    <div class="container" id="divBody"><!--
         <div class="page-header">
-            <h2>Prisoner's Dilemma</h2>
+            <h2>{$T.title}</h2>
         </div>
         <div class="row">
             <div class="span8">
-                <h3>
-                    The prisoner’s dilemma is a very well-known strategic game 
-                </h3>
-                <p>
-                    It can be used to think about many situations in international politics.
-                    As one example, suppose two states are considering whether or not to build arms
-                    and can’t immediately tell what decision the other side has made. Each side has
-                    the following preferences over outcomes
-                </p>
+                <h3>{$T.p2.h1}</h3>
+                <p>{$T.p2.desc1}</p>
             </div>
         </div>
         <div class="row">
             <div class="span10">
-                <div>Most preferred: Build when the other doesn’t</div>
-                <div>2nd most preferred: Don't build when the other doesn’t</div>
-                <div>3rd most preferred: Build when the other does</div>
-                <p>Least preferred: Don't build when the other does</p>
+                <div>{$T.p2.list1}</div>
+                <div>{$T.p2.list2}</div>
+                <div>{$T.p2.list3}</div>
+                <p>{$T.p2.list4}</p>
             </div>
         </div>
         <div  id="divMatrix" class="row">
             <div class="span6">
-                <h3>The Corresponding 2*2 Matrix</h3>
-                <table class=" matrix">
+                <h3>{$T.p3.h2}</h3>
+                <table class="matrix">
                     <tbody>
                         <tr>
                             <td id="td1">
-                                <div class="titleA">
-                                    State B</div>
-                                <div class="titleB">
-                                    State A</div>
+                                <div class="titleA">State B</div>
+                                <div class="titleB">State A</div>
                             </td>
-                            <td class="title">
-                                Build Arms
-                            </td>
-                            <td class="title">
-                                Save Money
-                            </td>
+                            <td class="title">{$T.op1}</td>
+                            <td class="title">{$T.op2}</td>
                         </tr>
                         <tr>
-                            <td class="title">
-                                Build Arms
-                            </td>
-                            <td class="square">
-                                3rd most preferred
-                            </td>
-                            <td class="square">
-                                Most preferred
-                            </td>
+                            <td class="title">{$T.op1}</td>
+                            <td class="square">3rd most preferred</td>
+                            <td class="square">Most preferred</td>
                         </tr>
                         <tr>
-                            <td class="title">
-                                Save Money
-                            </td>
-                            <td class="square" id="td12">
-                                Least preferred
-                            </td>
-                            <td class="square">
-                                2nd most preferred
-                            </td>
+                            <td class="title">{$T.op2}</td>
+                            <td class="square">Least preferred</td>
+                            <td class="square">2nd most preferred</td>
                         </tr>
                     </tbody>
                 </table>
@@ -122,27 +96,27 @@
         </div>
         <div class="row">
             <div class="span6">
-              <a href="#" id="btnMatrix" class="btn btn-small">see the corresponding 2*2.</a>
-              <a href="Third.html" class="btn btn-small">Ready to make a decision</a>
+              <a id="btnMatrix" href="#" class="btn btn-small">{$T.p2.btn1}</a>
+              <a id="btnDecide" href="Third.html" class="btn btn-small hide">{$T.p2.btn2}</a>
             </div>
         </div>
-        <!-- <hr class="soften">-->
-        <!-- /.marketing -->
-        <!-- Footer-->
         <footer class="footer" id="footer"></footer>
         <script type="text/javascript">$("#footer").load("Foot.html");</script>
+    -->
     </div>
     <!-- /container -->
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-
     <script type="text/javascript" language="javascript">
-        $("#btnMatrix").click(function(e) {
-            $('#divMatrix').toggle();
-            e.preventDefault();
-        });
+       
         function init() {
+            $("#divBody").processInnerTemplate(Pages[0]);
             tLine("td1", "#DDD");
-            $("#btnMatrix").click();
+            $("#divMatrix").hide();
+
+            $("#btnMatrix").click(function(e) {
+                $("#divMatrix,#btnDecide").toggle();
+                e.preventDefault();
+            });
         }
         init();
     </script>
