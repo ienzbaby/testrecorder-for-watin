@@ -41,7 +41,7 @@ var Pages=
         "op2": "Save Money",
         "p2": {
             "h1": "The prisoner’s dilemma is a very well-known strategic game",
-            "desc1": "It can be used to think about many situations in international politics. As one example, suppose two states are considering whether or not to build arms and can’t immediately tell what decision the other side has made. Each side has the following preferences over outcomes",
+            "desc1": "The prisoner’s dilemma is a very well-known strategic game that can be used to think about many situations in international politics. As one example, suppose two states are considering whether or not to build arms and can’t immediately tell what decision the other side has made. Each side has the following preferences over outcomes",
             "list1": "Most preferred: Build when the other doesn’t",
             "list2": "2nd most preferred: Don't build when the other doesn’t",
             "list3": "3rd most preferred: Build when the other does",
@@ -52,7 +52,7 @@ var Pages=
         },
         "p3": {
             "h1": "How would you decide whether to build arms or not in such a situation?",
-            "desc1": "Put yourself in the position of State A. Make your choice and we’ll tell you what happens based on what you and State B decide to do.",
+            "desc1": "How would you decide whether to build arms or not in such a situation? Put yourself in the position of State A. Make your choice and we’ll tell you what happens based on what you and State B decide to do.",
             "msg1": "State B decides to build arms too!Both of you arm but end up in the same relative security position. Both of you achieve your third best option. Too bad you couldn’t both agree not to build arms – then both of you would achieve your second most preferred outcome",
             "msg2": "You use your resources elsewhere and hope that State B will do the same.Eventually, however, you come to know that State B has built arms in spite of its claims that it would not do so. This is a disaster as you achieve your least preferred outcome!"
         }
