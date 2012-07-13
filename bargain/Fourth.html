@@ -57,7 +57,7 @@
         <div class="row">
             <div class="span8">
                 <h3></h3>
-                <p>{$T.p3.desc1}</p>
+                <p>{$T.p4.desc1}</p>
             </div>
         </div>
         <div class="row">
@@ -91,34 +91,24 @@
             <div class="span8">
                 <br />
                 <div id="divBuild" class="hide">
-                    <div class="alert alert-warn"><strong>Warning!&nbsp;&nbsp;</strong>
-                        {$T.p3.msg1}
+                    <div class="alert alert-success"><strong>Good!&nbsp;&nbsp;</strong>
+                        {$T.p4.msg1}
                     </div>
                 </div>
                 <div id="divSave" class="hide">
                     <div class="alert alert-warn"><strong>Warning!&nbsp;&nbsp;</strong>
-                        {$T.p3.msg2}
+                        {$T.p4.msg2}
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            {#if $T.p4 }
-            <div id="divRetry" class="span8 hide">
-                <h4>
-                    Would you like to play again or continue? 
-                    <a href="#" id="btnYes" class="btn btn-small">Play Agin</a> 
-                    <a href="#" id="btnGoon" class="btn btn-small">Continue</a>
-                </h4>
-            </div>
-            {#else}
             <div id="divRetry" class="span8 hide">
                 <h4>
                     Would you like to try again ? <a href="#" id="btnYes" class="btn btn-small">&nbsp;&nbsp;&nbsp;Yes&nbsp;&nbsp;&nbsp;</a>
                     <a href="First.html" id="btnNo" class="btn btn-small">&nbsp;&nbsp;&nbsp;No&nbsp;&nbsp;&nbsp;</a>
                 </h4>
             </div>
-            {#/if}
         </div>
         <footer class="footer" id="footer"></footer>
         <script type="text/javascript">$("#footer").load("Foot.html");</script>
@@ -131,7 +121,7 @@
                 if ($(this).hasClass("disabled") == true) return;
 
                 var id = $.request("id");    
-                var index = Pages[id].p3.op1;
+                var index = Pages[id].p4.op1;
                 $("table .btn").addClass("disabled");
                 $(this).addClass("btn-success");
                 $("table tr:eq(0) td:eq(" + index + ") .btn").addClass("btn-success");
@@ -144,7 +134,7 @@
                 if ($(this).hasClass("disabled") == true) return;
 
                 var id = $.request("id");
-                var index = Pages[id].p3.op1;
+                var index = Pages[id].p4.op1;
                 $("table .btn").addClass("disabled");
                 $(this).addClass("btn-success");
                 $("table tr:eq(0) td:eq(" + index + ") .btn").addClass("btn-success");
@@ -161,10 +151,6 @@
                 $("table td").removeClass("selected");
                 $("#divRetry").toggle();
                 $("#divBuild,#divSave").hide();
-            });
-
-            $("#btnGoon").click(function(e) {
-                location.href = "Fourth.html?id="+$.request("id");
             });
         }
         function init() {

@@ -39,7 +39,7 @@
                 <div class="controls">
                     <div class="input-prepend">
                         <span class="add-on"><i class="icon-search"></i></span>
-                        <input type="text" class="search-query" placeholder="Search"/>
+                        <input type="text" class="search-query" placeholder=""/>
                     </div>
                 </div>
                 </form>
@@ -82,13 +82,13 @@
                         </tr>
                         <tr>
                             <td class="title">{$T.op1}</td>
-                            <td class="square">3rd most preferred</td>
-                            <td class="square">Most preferred</td>
+                            <td class="square">{$T.td11}</td>
+                            <td class="square">{$T.td12}</td>
                         </tr>
                         <tr>
                             <td class="title">{$T.op2}</td>
-                            <td class="square">Least preferred</td>
-                            <td class="square">2nd most preferred</td>
+                            <td class="square">{$T.td21}</td>
+                            <td class="square">{$T.td22}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -98,7 +98,7 @@
             <div class="span8">
               <br/>
               <a id="btnMatrix" href="#" class="btn btn-small">{$T.p2.btn1}</a>
-              <a id="btnDecide" href="Third.html" class="btn btn-small hide">{$T.p2.btn2}</a>
+              <a id="btnDecide" href="#" class="btn btn-small hide">{$T.p2.btn2}</a>
             </div>
         </div>
         <footer class="footer" id="footer"></footer>
@@ -109,13 +109,18 @@
     
     <script type="text/javascript" language="javascript">
         function init() {
-            $("#divBody").processInnerTemplate(Pages[0]);
+            var id = $.request("id");
+            $("#divBody").processInnerTemplate(Pages[id]);
             tLine("td1", "#DDD");
             $("#divMatrix").hide();
 
             $("#btnMatrix").click(function(e) {
                 $("#divMatrix,#btnDecide").toggle();
                 e.preventDefault();
+            });
+
+            $("#btnDecide").click(function(e) {
+                location.href = "Third.html?id=" + id;
             });
         }
         init();
