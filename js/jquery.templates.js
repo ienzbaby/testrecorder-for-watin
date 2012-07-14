@@ -13,7 +13,21 @@ jQuery.fn.extend({
         $(this).setTemplate(tpl).processTemplate(data);
     }
 });
-
+//取得Url参数
+$.request = function(key) {
+    var url = location.href;
+    var paraString = url.substring(url.indexOf("?") + 1, url.length).split("&");
+    var paraObj = {}
+    for (i = 0; j = paraString[i]; i++) {
+        paraObj[j.substring(0, j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=") + 1, j.length);
+    }
+    var returnValue = paraObj[key.toLowerCase()];
+    if (typeof (returnValue) == "undefined") {
+        return "";
+    } else {
+        return returnValue.replace(/#/g, "");
+    }
+};
 function tLine(objid, color) {
     var obj = document.getElementById(objid);
     var x1 = obj.offsetLeft, y1 = obj.offsetTop, x2 = obj.offsetLeft + obj.offsetWidth, y2 = obj.offsetTop + obj.offsetHeight;
@@ -33,14 +47,16 @@ function tLine(objid, color) {
 function Coming(obj) {
     alert('New Levels Coming Soon!');
 }
-var Pages=
-[
+var Pages = [
     {
         "title": "Prisoner's Dilemma",
         "op1": "Build Arms",
         "op2": "Save Money",
+        "td11": "3rd most preferred",
+        "td12": "2nd most preferred",
+        "td21": "Least preferred",
+        "td22": "Most preferred",
         "p2": {
-            "h1": "The prisoner’s dilemma is a very well-known strategic game",
             "desc1": "The prisoner’s dilemma is a very well-known strategic game that can be used to think about many situations in international politics. As one example, suppose two states are considering whether or not to build arms and can’t immediately tell what decision the other side has made. Each side has the following preferences over outcomes",
             "list1": "Most preferred: Build when the other doesn’t",
             "list2": "2nd most preferred: Don't build when the other doesn’t",
@@ -51,9 +67,12 @@ var Pages=
             "btn2": "Ready to make a decision"
         },
         "p3": {
-            "h1": "How would you decide whether to build arms or not in such a situation?",
             "desc1": "How would you decide whether to build arms or not in such a situation? Put yourself in the position of State A. Make your choice and we’ll tell you what happens based on what you and State B decide to do.",
+
+            "op1": "1",
             "msg1": "State B decides to build arms too!Both of you arm but end up in the same relative security position. Both of you achieve your third best option. Too bad you couldn’t both agree not to build arms – then both of you would achieve your second most preferred outcome",
+
+            "op2": "1",
             "msg2": "You use your resources elsewhere and hope that State B will do the same.Eventually, however, you come to know that State B has built arms in spite of its claims that it would not do so. This is a disaster as you achieve your least preferred outcome!"
         }
     },
@@ -61,9 +80,12 @@ var Pages=
         "title": "Stag Hunt",
         "op1": "Cooprate",
         "op2": "Don't Cooperate",
+        "td11": "Most preferred",
+        "td12": "Least preferred",
+        "td21": "2nd most preferred",
+        "td22": "3rd most preferred",
         "p2": {
-            "h1": "The stag hunt is a strategic situation discussed in works Jean-Jacques Rousseau and several international relations theorists",
-            "desc1": "In Rousseau’s discussion, hunters need to decide between cooperating with each other to hunt a stag and striking out alone to trap a hare.  Some scholars of international relations have argued that states can find themselves making similar sorts of decisions.",
+            "desc1": "The stag hunt is a strategic situation discussed in works Jean-Jacques Rousseau and several international relations theorists.In Rousseau’s discussion, hunters need to decide between cooperating with each other to hunt a stag and striking out alone to trap a hare.  Some scholars of international relations have argued that states can find themselves making similar sorts of decisions.",
             "list1": "Most preferred: Cooperate when the other state cooperates",
             "list2": "2nd most preferred: Don’t cooperate when the other state does",
             "list3": "3rd most preferred: Don’t cooperate when the other state doesn’t cooperate",
@@ -73,15 +95,59 @@ var Pages=
             "btn2": "Ready to make a decision"
         },
         "p3": {
-            "h1": "How would you decide whether to build arms or not in such a situation?",
-            "desc1": "Put yourself in the position of State A. Make your choice and we’ll tell you what happens based on what you and State B decide to do.",
-            "msg1": "Neither of you cooperate.",
-            "content1": "Both of you arm but end up in the same relative security position. Both of you achieve your third best option. Too bad you couldn’t both agree not to build arms – then both of you would achieve your second most preferred outcome",
-            "msg2": "The other state didn’t trust you",
-            "content2": "Neither of you cooperate.  There seems to be a trust issue that both sides expected.  You achieve your third most preferred outcome – but it’s not clear you could have done any better."
+            "desc1": "Suppose you’re facing a state that you think expects that you won’t cooperate.  What would you decide to do?",
+
+            "op1": "2",
+            "msg1": "The other state didn’t trust you and, expecting you not to cooperate, it didn’t cooperate.  You achieve your least preferred outcome!",
+
+            "op2": "2",
+            "msg2": "Neither of you cooperate.  There seems to be a trust issue that both sides expected.  You achieve your third most preferred outcome – but it’s not clear you could have done any better."
+        },
+        "p4": {
+            "desc1": "Now suppose you’re facing a state that you think expects that you will cooperate.  Perhaps the two of you have cooperated in other areas in the past.  What would you decide to do?",
+
+            "op1": "1",
+            "msg1": "The other state chose the same.  You two seem to have a good relationship.  Both of you achieve your first best outcome!",
+
+            "op2": "1",
+            "msg2": "The other state chose to cooperate!  You achieve only your second best outcome – and perhaps the other state won’t make the mistake of cooperating with you again in the future."
         }
     },
     {
-        "title": "The Game Of Chicken"
+        "title": "The Game Of Chicken",
+        "op1": "Insist on ",
+        "op2": "Concession",
+        "td11": "Least preferred",
+        "td12": "Most preferred",
+        "td21": "3nd most preferred",
+        "td22": "2rd most preferred",
+        "p2": {
+            "desc1": "The game of chicken is sometimes taken to be a representation of aggressive bargaining between states, especially when conflict or the risk of conflict is thought to be very costly.  Suppose two states are bargaining over territory and have the following preferences",
+            "list1": "Most preferred: Insist on a concession when the other side decides to make a concession",
+            "list2": "2nd most preferred: Don’t insist on a concession when the other side doesn’t insist",
+            "list3": "3rd most preferred: Make a concession when the other side insists on a concession",
+            "list4": "Least preferred: Insist on a concession when the other side insists on a concession",
+            "h2": "The Corresponding 2*2 Matrix",
+            "btn1": "See the corresponding 2*2",
+            "btn2": "Ready to make a decision"
+        },
+        "p3": {
+        "desc1": "Put yourself in the position of the leader of one of the states.  Suppose you’re facing a leader known for aggressive behavior.  What do you decide to do?",
+
+            "op1": "1",
+            "msg1": "Both of you insist on concessions and achieve your least preferred outcomes!  The dangerous escalation of the conflict seems to risk war!",
+
+            "op2": "1",
+            "msg2": "You would have liked to get a concession from your adversary, but at least you avoided the risk of further escalation.  Perhaps that was prudent."
+        },
+        "p4": {
+        "desc1": "Now suppose you’re facing a leader who’s known for a more concilliatory approach to foreign policy.  Would you insist on a concession in this situation? ",
+
+            "op1": "2",
+            "msg1": "True to your expectation, the other state decided not to insist on a concession.  Since you did, the other side backs down and you achieve your most preferred outcome.",
+
+            "op2": "2",
+            "msg2": "Neither side escalates and you achieve your second most preferred outcome.  Nevertheless, if you had pressed your case with the other side, you probably would have won a concession – the best outcome from your point of view."
+        }
     }
 ];
