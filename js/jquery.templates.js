@@ -53,9 +53,9 @@ var Pages = [
         "op1": "Build Arms",
         "op2": "Save Money",
         "td11": "3rd most preferred",
-        "td12": "2nd most preferred",
+        "td12": "Most preferred",
         "td21": "Least preferred",
-        "td22": "Most preferred",
+        "td22": "2nd most preferred",
         "p2": {
             "desc1": "The prisoner’s dilemma is a very well-known strategic game that can be used to think about many situations in international politics. As one example, suppose two states are considering whether or not to build arms and can’t immediately tell what decision the other side has made. Each side has the following preferences over outcomes",
             "list1": "Most preferred: Build when the other doesn’t",
