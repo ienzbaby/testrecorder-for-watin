@@ -1223,6 +1223,7 @@ ol.linenums li
 	width:99%;
 	border-top:dotted 1px #DDDDDD;
 	margin:3px 3px 3px 3px;
-	font-size:11px;
+	font-size:10px;
 	vertical-align:top;
+	color:#666666;
 }
