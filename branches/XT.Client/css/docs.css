@@ -1145,7 +1145,7 @@ ol.linenums li
 	border-left: solid 1px #DDD;
 	border-collapse: separate;
 	border-spacing: 1px;
-	width:360px;
+	/*width:360px;*/
 }
 .matrix tr
 {
@@ -1180,10 +1180,10 @@ ol.linenums li
 .matrix td.square
 {
 	/*height:100px;*/
-	width: 200px;
-	height: 40px;
+	width: 220px;
+	/*height: 40px;*/
 	text-align: center;
-	vertical-align: middle;
+	vertical-align: top;
 }
 .matrix .titleA
 {
@@ -1206,4 +1206,23 @@ ol.linenums li
 	color:#FC7D01;
 	font-size: 24px;
 	line-height: 26px;
+}
+.splitTop
+{
+	text-align:center;
+	width:99%;
+	height:25px;
+	margin-top:3px;
+	text-align: center;
+	vertical-align:bottom;
+	font-size:13px;
+}
+.splitBottom
+{
+	text-align:left;
+	width:99%;
+	border-top:dotted 1px #DDDDDD;
+	margin:3px 3px 3px 3px;
+	font-size:11px;
+	vertical-align:top;
 }

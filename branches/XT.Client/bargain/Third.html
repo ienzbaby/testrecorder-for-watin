@@ -61,7 +61,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="span6">
+            <div class="span8">
                 <br/>
                 <table class=" matrix">
                     <tbody>
@@ -75,13 +75,25 @@
                         </tr>
                         <tr>
                             <td class="title"><a href="#" class="btn btn-small" id="btnBuild">{$T.op1}</a></td>
-                            <td class="square">{$T.td11}</td>
-                            <td class="square">{$T.td12}</td>
+                            <td class="square">
+                                <div class="splitTop">{$T.th11}</div>
+                                <div class="splitBottom">{$T.td11}</div>
+                            </td>
+                            <td class="square">
+                                <div class="splitTop">{$T.th12}</div>
+                                <div class="splitBottom">{$T.td12}</div>
+                            </td>
                         </tr>
                         <tr>
                             <td class="title"><a href="#" class="btn btn-small" id="btnSave">{$T.op2}</a></td>
-                            <td class="square">{$T.td21}</td>
-                            <td class="square">{$T.td22}</td>
+                            <td class="square">
+                                <div class="splitTop">{$T.th21}</div>
+                                <div class="splitBottom">{$T.td21}</div>
+                            </td>
+                            <td class="square">
+                                <div class="splitTop">{$T.th22}</div>
+                                <div class="splitBottom">{$T.td22}</div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
