@@ -68,27 +68,39 @@
             </div>
         </div>
         <div  id="divMatrix" class="row">
-            <div class="span6">
+            <div class="span8">
                 <h3>{$T.p3.h2}</h3>
                 <table class="matrix">
                     <tbody>
-                        <tr>
+                       <tr>
                             <td id="td1">
                                 <div class="titleA">State B</div>
                                 <div class="titleB">State A</div>
                             </td>
-                            <td class="title">{$T.op1}</td>
-                            <td class="title">{$T.op2}</td>
+                            <td class="title"><a href="#" class="btn btn-small disabled">{$T.op1}</a></td>
+                            <td class="title"><a href="#" class="btn btn-small disabled">{$T.op2}</a></td>
                         </tr>
                         <tr>
-                            <td class="title">{$T.op1}</td>
-                            <td class="square">{$T.th11}</td>
-                            <td class="square">{$T.th12}</td>
+                            <td class="title"><a href="#" class="btn btn-small" id="btnBuild">{$T.op1}</a></td>
+                            <td class="square">
+                                <div class="splitTop">{$T.th11}</div>
+                                <div class="splitBottom">{$T.td11}</div>
+                            </td>
+                            <td class="square">
+                                <div class="splitTop">{$T.th12}</div>
+                                <div class="splitBottom">{$T.td12}</div>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="title">{$T.op2}</td>
-                            <td class="square">{$T.th21}</td>
-                            <td class="square">{$T.th22}</td>
+                            <td class="title"><a href="#" class="btn btn-small" id="btnSave">{$T.op2}</a></td>
+                            <td class="square">
+                                <div class="splitTop">{$T.th21}</div>
+                                <div class="splitBottom">{$T.td21}</div>
+                            </td>
+                            <td class="square">
+                                <div class="splitTop">{$T.th22}</div>
+                                <div class="splitBottom">{$T.td22}</div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
