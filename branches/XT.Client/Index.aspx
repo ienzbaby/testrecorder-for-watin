@@ -1,2 +1,2 @@
 ﻿<%@ Page Language="C#" %>
-<script type="text/javascript"> location.href="bargain/first.html"</script>
+<script type="text/javascript"> location.href="bargain/Index.html"</script>
